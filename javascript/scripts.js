@@ -26,7 +26,7 @@ const changeValueButton = (signal, check) => {
   }
 }
 
-const fetchData = () => {
+const fetchData = async () => {
   const api = 'https://splashco.herokuapp.com/api/landing/submit'
 
   const bodyProperty = {
@@ -41,13 +41,22 @@ const fetchData = () => {
     maxPrice: document.querySelector('.input--maxPrice').value
   }
 
-  fetch(api,
+  await fetch(api,
     {
       method: 'POST',
       body: JSON.stringify(bodyProperty),
       headers: {
         'Content-type': 'application/json'
       }
-    }).then(response => response.json())
-    .then(response => console.log(response))
+    })
+    .then(response => {
+      if (!response.ok) {
+        console.log(response.text())
+      } else {
+        console.log(response)
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 }

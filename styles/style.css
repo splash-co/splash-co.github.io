@@ -156,6 +156,19 @@ body {
   width: 96%;
 }
 
+.form__section__grid--inputs .input--date::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0;
+  width: 11.6%;
+  height: 3.1%;
+  left: 54.8%;
+  position: absolute;
+}
+
+.form__section__grid--inputs .input--date::-webkit-inner-spin-button {
+  display: none;
+}
+
 .form__section .form__section--container .form__section__grid--inputs .select--city {
   grid-column: 2;
   grid-row: 2;
@@ -208,13 +221,13 @@ body {
 
 .form__section .form__section--container 
 .form__section__grid--inputs .label--minPricePlaceholder {
-  top: 83.3%;
+  top: 82.7%;
   left: 54.8%;
 }
 
 .form__section .form__section--container 
 .form__section__grid--inputs .label--maxPricePlaceholder {
-  top: 83.3%;
+  top: 82.7%;
   left: 68%;
 }
 
@@ -249,4 +262,60 @@ body {
   outline: none;
   align-self: flex-end;
   display: disabled;
+}
+
+.container__confirm--submit {
+  user-select: none;
+  position: absolute;
+  z-index: 999;
+  background: rgba(255, 255, 255, .8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.container__confirm--submit p {
+  margin-top: 18%;
+  font-size: 20px;
+}
+
+.container__confirm--submit .external__circle {
+  position: absolute;
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+  border-right: 4px solid #000;
+  border-bottom: 4px solid transparent;
+  border-radius: 50%;
+  width: 12%;
+  height: 24%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spinHourly 1.5s infinite;
+}
+
+.container__confirm--submit .internal__circle {
+  position: absolute;
+  border-top: 4px solid transparent;
+  border-left: 4px solid #000;
+  border-right: 4px solid #000;
+  border-bottom: 4px solid #000;
+  border-radius: 50%;
+  width: 8%;
+  height: 16%;
+  transition: 300ms;
+  animation: spinHourly 1.5s infinite reverse;
+}
+
+@keyframes spinHourly {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
 }
