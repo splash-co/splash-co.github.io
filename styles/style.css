@@ -1,0 +1,232 @@
+/* ----------------------------------------------------- */
+/* -------------- SEÇÃO DE IMPORTAÇÕES ----------------- */
+/* ----------------------------------------------------- */
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Regular.ttf');
+}
+
+/* ----------------------------------------------------- */
+/* ----------- SEÇÃO DE CONFIGURAÇÕES GERAIS ----------- */
+/* ----------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 2316px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato';
+}
+
+.content__container {
+  height: 100%;
+  display: grid;
+}
+
+/* ----------------------------------------------------- */
+/* ---------------- SEÇÃO DE ESTILIZAÇÃO --------------- */
+/* ----------------------------------------------------- */
+
+/* ------------- ESTILIZAÇÃO HEADER (1ª SEÇÃO) --------- */
+
+.header__container {
+  height: 31.9%;
+  width: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/background_header.png'), no-repeat
+  ;
+}
+
+.header__container .navbar__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.1% 4% 0 4.4%;
+}
+
+.header__container .navbar__container .anchor__container {
+  width: 40%;
+  display: flex;
+
+  flex: 0 1 450px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header__container .navbar__container .anchor__container a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  font-size: 1.1em;
+  letter-spacing: 0.2px;
+}
+
+.section__container--content {
+  margin: 5.5% 4% 0 4.4%;
+  display: flex;  
+  justify-content: space-between;
+  height: 70%
+}
+
+.section__container--content .description__container {
+  color: #fff;
+  margin-top: 7%;
+  width: 33%; 
+}
+
+.section__container--content .description__container h1 {
+  font-size: 30px;
+  margin-bottom: 3.14%;
+}
+
+.section__container--content .description__container p {
+  font-size: 1.3em;
+  line-height: 1.6em;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+.section__container--content .form__section {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+  user-select: none;
+  width: 47%;
+  height: 100%;
+}
+
+.section__container--content .form__section .form__section--container {
+  margin: 6% 4% 0 4%;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+.section__container--content .form__section .form__section--container h1 {
+  font-weight: 800;
+  font-size: 2em;
+  line-height: 100%;
+  margin-bottom: 6%;
+}
+
+.section__container--content .form__section .form__section--container label {
+  color: #656565;
+  align-self: end;
+}
+
+.section__container--content .form__section 
+.form__section--container .form__element--input {
+  border: 1px solid #cacaca;
+  border-radius: 2px;
+  outline: none;
+  padding: 6px;
+  font-size: 1.1em;
+  margin-bottom: 2.5%;
+}
+
+.form__section .form__section--container .form__section__grid--inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50%);
+}
+
+.form__section .form__section--container .form__section__grid--inputs label {
+  align-self: center;
+  height: 45%;
+  margin-left: 2px;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .input--date {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+  width: 96%;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .select--city {
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  border: 1px solid #cacaca;
+  border-radius: 2px;
+  width: 96%;
+  outline: none;
+  font-size: 1em;
+  padding: 2px;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .div--button__script {
+  display: flex;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .div--button__script img {
+  width: 24px;
+  height: 17px;
+  align-self: center;
+  margin-left: 14%;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .input--value {
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  border: none;
+  padding-left: 18%;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .form__element--button {
+  cursor: pointer;
+  width: 14%;
+  height: 74%;
+  align-self: center;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 2px;
+  font-weight: 600;
+  color: #136299;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .input--minPrice {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+  width: 96%;
+}
+
+.form__section .form__section--container .form__section__grid--inputs .input--maxPrice {
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  width: 96%;
+}
+
+.form__section .form__section--container .form__element--finish__button {
+  cursor: pointer;
+  width: 35%;
+  padding: 2%;
+  background-color: #136299;
+  margin-top: 4%;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  outline: none;
+  align-self: flex-end;
+}

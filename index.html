@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash</title>
+
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+
+  <div class="content__container">
+    <header class="header__container">
+      <nav class="navbar__container">
+        <a href="#" class="logo--image">
+          <img src="./assets/logo_branca.png" alt="Logo Splash" />
+        </a>
+
+        <section class="anchor__container">
+          <a href="">SOBRE NÓS</a>
+          <a href="">COMO FUNCIONA</a>
+          <a href="">CONTATO</a>
+        </section>
+      </nav>
+
+      <section class="section__container--content">
+        <div class="description__container">
+          <h1>SEU PRÓXIMO PASSEIO ESTÁ A UM CLIQUE DE DISTÂNCIA</h1>
+          <p>
+            Encontre passeios de barco nas melhores praias do Rio de Janeiro
+            e agende agora sua próxima experiência inesquecível
+          </p>
+        </div>
+
+        <section class="form__section">
+          <div class="form__section--container">
+            <h1>AGENDE AGORA!</h1>
+
+            <label class="form__element--label label--name" for="input--name">
+              Seu nome completo
+            </label>
+            <input class="form__element--input input--name" required />
+
+            <label class="form__element--label label--email" for="input--email">
+              Seu e-mail
+            </label>
+            <input class="form__element--input input--email" type="email" required />
+
+            <label class="form__element--label" for="input--telephone">
+              Seu telefone
+            </label>
+            <input class="form__element--input input--telephone" type="tel" required />
+
+            <div class="form__section__grid--inputs">
+              <label class="form__element--label label--date" for="input--date">
+                Escolha uma data
+              </label>
+              <input type="date" class="form__element--input input--date" required />
+
+              <label class="form__element--label label--city" for="">
+                Escolha o local
+              </label>
+              <select class="form__element--select select--city">
+                <option>Selecione</option>
+                <option>Angra dos Reis - RJ</option>
+              </select>
+
+              <label class="form__element--label label--quantity__people">
+                Quantas pessoas?
+              </label>
+              <div class="form__element--div div--button__script">
+                <button
+                  class="form__element--button"
+                  type="button"
+                  onclick="changeValueButton(false, false)"
+                >
+                  -
+                </button>
+                <input class="form__element--input input--value input__value--quantityPeople" value="1" disabled required />
+                <button 
+                  class="form__element--button"
+                  type="button"
+                  onclick="changeValueButton(true, false)"
+                >
+                  +
+                </button>
+                <img src="./assets/vector_group.png" alt="Group Vector - People" />
+              </div>
+            </div>
+
+            <div class="form__section__grid--inputs">
+              <label class="form__element--label label--minPrice">
+                Preço mínimo
+              </label>
+              <input class="form__element--input input--minPrice" type="number" required />
+
+              <label class="form__element--label label--maxPrice">
+                Preço máximo
+              </label>
+              <input class="form__element--input input--maxPrice" type="number" required />
+
+              <label class="form__element--label label--quantityDays">
+                Quantidade de dias
+              </label>
+              <div class="form__element--div div--button__script">
+                <button
+                  class="form__element--button"
+                  type="button"
+                  onclick="changeValueButton(false, true)"
+                >
+                  -
+                </button>
+                <input class="form__element--input input--value input__value--quantityDay" value="1" disabled required />
+                <button
+                  class="form__element--button"
+                  type="button"
+                  onclick="changeValueButton(true, true)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <button 
+              type="button"
+              class="form__element--finish__button"
+              onclick="fetchData()"
+            >
+              FAZER RESERVA
+            </button>
+          </div>
+        </section>
+      </section>
+    </header>
+  </div>
+
+  <script src="./javascript/scripts.js"></script>
+</body>
+</html>
