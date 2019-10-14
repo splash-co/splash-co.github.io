@@ -201,11 +201,29 @@ body {
   color: #136299;
 }
 
+.form__section .form__section--container 
+.form__section__grid--inputs .form__element--labelPlaceholder {
+  position: absolute;
+}
+
+.form__section .form__section--container 
+.form__section__grid--inputs .label--minPricePlaceholder {
+  top: 83.3%;
+  left: 54.8%;
+}
+
+.form__section .form__section--container 
+.form__section__grid--inputs .label--maxPricePlaceholder {
+  top: 83.3%;
+  left: 68%;
+}
+
 .form__section .form__section--container .form__section__grid--inputs .input--minPrice {
   grid-column: 1;
   grid-row: 2;
   height: 100%;
   width: 96%;
+  padding-left: 14%;
 }
 
 .form__section .form__section--container .form__section__grid--inputs .input--maxPrice {
@@ -213,6 +231,7 @@ body {
   grid-row: 2;
   height: 100%;
   width: 96%;
+  padding-left: 14%;
 }
 
 .form__section .form__section--container .form__element--finish__button {
@@ -229,4 +248,5 @@ body {
   font-size: 16px;
   outline: none;
   align-self: flex-end;
+  display: disabled;
 }

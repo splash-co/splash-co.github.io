@@ -1,3 +1,7 @@
+$(document).ready(() => {
+  $('.input--telephone').mask('(00) 90000-0000')
+})
+
 const changeValueButton = (signal, check) => {
   if (check) {
     let inputValue = parseInt(document.querySelector('.input__value--quantityDay').value)
@@ -14,8 +18,8 @@ const changeValueButton = (signal, check) => {
 
     inputValue = signal ? inputValue + 1 : inputValue - 1
   
-    if (inputValue <= 0 ) {
-      return inputValue = 1
+    if (inputValue <= 1 ) {
+      return inputValue = 2
     }
 
     document.querySelector('.input__value--quantityPeople').value = `${inputValue}`
@@ -28,17 +32,14 @@ const fetchData = () => {
   const bodyProperty = {
     fullName: document.querySelector('.input--name').value,
     email: document.querySelector('.input--email').value,
-    phone: document.querySelector('.input--telephone').value,
+    phone: $('.input--telephone').cleanVal(),
     city: document.querySelector('.select--city').value,
-    numPeople: Number(document.querySelector('.input__value--quantityPeople').value),
+    numPeople: document.querySelector('.input__value--quantityPeople').value,
     rentDate: document.querySelector('.input--date').value,
-    numDays: Number(document.querySelector('.input__value--quantityDay').value),
-    minPrice: Number(document.querySelector('.input--minPrice').value),
-    maxPrice: Number(document.querySelector('.input--maxPrice').value)
+    numDays: document.querySelector('.input__value--quantityDay').value,
+    minPrice: document.querySelector('.input--minPrice').value,
+    maxPrice: document.querySelector('.input--maxPrice').value
   }
-
-  console.log(bodyProperty)
-  console.log(JSON.stringify(bodyProperty))
 
   fetch(api,
     {
