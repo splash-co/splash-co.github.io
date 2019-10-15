@@ -148,6 +148,11 @@ body {
 }
 
 .section__container--content .form__section 
+.form__section--container .form__element--input--placeholder--error::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.section__container--content .form__section 
 .form__section--container .form__element--input--error::placeholder {
   color: #e36262;
 }
@@ -165,10 +170,20 @@ body {
 }
 
 .form__section .form__section--container .form__section__grid--inputs .input--date {
+  background-image: url('../assets/vectors/calendar_icon_placeholder.png');
+  background-repeat: no-repeat;
+  background-position: 96%;
   grid-column: 1;
   grid-row: 2;
   height: 100%;
   width: 96%;
+}
+
+.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-day-field,
+.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-month-field,
+.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-year-field,
+.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-text {  
+  color: #e36262;
 }
 
 .form__section__grid--inputs .input--date::-webkit-calendar-picker-indicator {
