@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,26 @@
 
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
+
 <body>
   <!-- IMPORT JQUERY -->
   <script src="./javascript/jquery-3.4.1.min.js"></script>
   <script src="./plugins/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
 
-  <div class="container__confirm--submit">
+  <div class="container__confirm--submit none">
     <div class="external__circle">&nbsp;</div>
     <div class="internal__circle">&nbsp;</div>
-    <p>Fazendo a requisição do seu pedido...</p>
+    <p>Aguarde um instante...</p>
+  </div>
+
+  <div onclick="refreshPage()" class="container__confirm--submit none" id="success">
+    <img src="./assets/black-checkmark.png" />
+    <p>Sucesso! O seu pedido já foi enviado!</p>
+  </div>
+
+  <div onclick="refreshPage()" class="container__confirm--submit none" id="failure">
+    <img src="./assets/black-close.png" />
+    <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
   </div>
 
   <div class="content__container">
@@ -78,19 +90,12 @@
                 Quantas pessoas?
               </label>
               <div class="form__element--div div--button__script">
-                <button
-                  class="form__element--button"
-                  type="button"
-                  onclick="changeValueButton(false, false)"
-                >
+                <button class="form__element--button" type="button" onclick="changeValueButton(false, false)">
                   -
                 </button>
-                <input class="form__element--input input--value input__value--quantityPeople" value="2" disabled required />
-                <button 
-                  class="form__element--button"
-                  type="button"
-                  onclick="changeValueButton(true, false)"
-                >
+                <input class="form__element--input input--value input__value--quantityPeople" value="2" disabled
+                  required />
+                <button class="form__element--button" type="button" onclick="changeValueButton(true, false)">
                   +
                 </button>
                 <img src="./assets/vector_group.png" alt="Group Vector - People" />
@@ -118,29 +123,18 @@
                 Quantidade de dias
               </label>
               <div class="form__element--div div--button__script">
-                <button
-                  class="form__element--button"
-                  type="button"
-                  onclcick="changeValueButton(false, true)"
-                >
+                <button class="form__element--button" type="button" onclcick="changeValueButton(false, true)">
                   -
                 </button>
-                <input class="form__element--input input--value input__value--quantityDay" value="1" disabled required />
-                <button
-                  class="form__element--button"
-                  type="button"
-                  onclick="changeValueButton(true, true)"
-                >
+                <input class="form__element--input input--value input__value--quantityDay" value="1" disabled
+                  required />
+                <button class="form__element--button" type="button" onclick="changeValueButton(true, true)">
                   +
                 </button>
               </div>
             </div>
 
-            <button 
-              type="button"
-              class="form__element--finish__button"
-              onclick="fetchData()"
-            >
+            <button type="button" class="form__element--finish__button" onclick="fetchData()">
               FAZER RESERVA
             </button>
           </div>
@@ -151,4 +145,5 @@
 
   <script src="./javascript/scripts.js"></script>
 </body>
+
 </html>
