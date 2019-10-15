@@ -48,7 +48,7 @@
             <label class="form__element--label label--name" for="input--name">
               Seu nome completo
             </label>
-            <input class="form__element--input input--name" required />
+            <input class="form__element--input input--name" onkeypress="return validateKeyStrokes(event)" required />
 
             <label class="form__element--label label--email" for="input--email">
               Seu e-mail

@@ -137,6 +137,21 @@ body {
   margin-bottom: 2.5%;
 }
 
+.section__container--content .form__section 
+.form__section--container .form__element--input--error {
+  border-radius: 2px;
+  outline: none;
+  padding: 6px;
+  font-size: 1.1em;
+  margin-bottom: 2.5%;
+  border: 1px solid #e36262;
+}
+
+.section__container--content .form__section 
+.form__section--container .form__element--input--error::placeholder {
+  color: #e36262;
+}
+
 .form__section .form__section--container .form__section__grid--inputs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
