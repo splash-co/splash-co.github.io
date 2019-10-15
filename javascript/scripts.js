@@ -26,7 +26,7 @@ const changeValueButton = (signal, check) => {
   }
 }
 
-const fetchData = async () => {
+const fetchData = () => {
   const api = 'https://splashco.herokuapp.com/api/landing/submit'
 
   const bodyProperty = {
@@ -41,22 +41,40 @@ const fetchData = async () => {
     maxPrice: document.querySelector('.input--maxPrice').value
   }
 
-  await fetch(api,
-    {
+  const mainDate = (new Date()).getTime()
+
+  return (
+    fetch(api, {
       method: 'POST',
       body: JSON.stringify(bodyProperty),
       headers: {
         'Content-type': 'application/json'
       }
     })
-    .then(response => {
-      if (!response.ok) {
-        console.log(response.text())
+    .then(res => {
+      if(res.ok) {
+        const modal = document.querySelector('.container__confirm--submit')
+
+        modal.style.display = 'flex'
+        document.body.style.overflow = 'hidden'
+
+        return res.json()
       } else {
-        console.log(response)
+        return res.text().then(text => {
+          const error = JSON.parse(text)
+          throw new Error(error.message)
+        })
       }
     })
-    .catch((err) => {
-      console.log(err)
+    .catch(err => {     
+      const error =  {err}
+
+      switch (error.err.message) {
+        case '"fullName" is not allowed to be empty':
+          console.log('banaan')
+          const input = document.querySelector('.input--name')
+          break
+      }
     })
+  )
 }
