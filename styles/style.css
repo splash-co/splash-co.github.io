@@ -35,6 +35,20 @@ body {
   height: 100%;
 }
 
+/* VARIABLES */
+
+:root {
+  --header-height: 739px;
+  --navbar-padding: 28px 90px 0 59px;
+  --navbar-font-size: 22px;
+  --navbar-font-weight: 600;
+  --content-margin: 140px 85px 0 59px;
+  --description-margin: 40px;
+  --description-h1-size: 30px;
+  --description-h1-line-height: 45px;
+  --description-h1-mb: 22px;
+}
+
 /* ----------------------------------------------------- */
 /* ---------------- SEÇÃO DE ESTILIZAÇÃO --------------- */
 /* ----------------------------------------------------- */
@@ -43,9 +57,8 @@ body {
 /* ------------- ESTILIZAÇÃO HEADER (1ª SEÇÃO) --------- */
 /* ----------------------------------------------------- */
 
-
 .header__container {
-  height: 23.8%;
+  height: var(--header-height);
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../assets/background_header.png'), no-repeat;
@@ -54,14 +67,12 @@ body {
 .header__container .navbar__container {
   display: flex;
   justify-content: space-between;
-  padding: 2.1% 4% 0 4.4%;
+  padding: var(--navbar-padding);
 }
 
 .header__container .navbar__container .anchor__container {
-  width: 40%;
   display: flex;
-
-  flex: 0 1 450px;
+  flex: 0 1 615px;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -71,12 +82,13 @@ body {
   color: white;
   text-decoration: none;
   align-items: center;
-  font-size: 1.1em;
+  font-size: var(--navbar-font-size);
+  font-weight: var(--navbar-font-weight);
   letter-spacing: 0.2px;
 }
 
 .section__container--content {
-  margin: 5.5% 4% 0 4.4%;
+  margin: var(--content-margin);
   display: flex;
   justify-content: space-between;
   height: 70%;
@@ -84,13 +96,14 @@ body {
 
 .section__container--content .description__container {
   color: #fff;
-  margin-top: 7%;
+  margin-top: var(--description-margin);
   width: 33%;
 }
 
 .section__container--content .description__container h1 {
-  font-size: 30px;
-  margin-bottom: 3.14%;
+  font-size: var(--description-h1-size);
+  line-height: var(--description-h1-line-height);
+  margin-bottom: var(--description-h1-mb);
 }
 
 .section__container--content .description__container p {
@@ -139,8 +152,10 @@ body {
   margin-bottom: 2.5%;
 }
 
-.section__container--content .form__section 
-.form__section--container .form__element--input--error {
+.section__container--content
+  .form__section
+  .form__section--container
+  .form__element--input--error {
   border-radius: 2px;
   outline: none;
   padding: 6px;
@@ -149,13 +164,17 @@ body {
   border: 1px solid #e36262;
 }
 
-.section__container--content .form__section 
-.form__section--container .form__element--input--placeholder--error::-webkit-input-placeholder {
+.section__container--content
+  .form__section
+  .form__section--container
+  .form__element--input--placeholder--error::-webkit-input-placeholder {
   font-size: 12px;
 }
 
-.section__container--content .form__section 
-.form__section--container .form__element--input--error::placeholder {
+.section__container--content
+  .form__section
+  .form__section--container
+  .form__element--input--error::placeholder {
   color: #e36262;
 }
 
@@ -170,8 +189,11 @@ body {
   height: 45%;
   margin-left: 2px;
 }
-    
-.form__section .form__section--container .form__section__grid--inputs .input--date {
+
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .input--date {
   background-image: url('../assets/vectors/calendar_icon_placeholder.png');
   background-repeat: no-repeat;
   background-position: 96%;
@@ -181,10 +203,13 @@ body {
   width: 96%;
 }
 
-.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-day-field,
-.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-month-field,
-.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-year-field,
-.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-text {  
+.form__section__grid--inputs
+  .input--date--error::-webkit-datetime-edit-day-field,
+.form__section__grid--inputs
+  .input--date--error::-webkit-datetime-edit-month-field,
+.form__section__grid--inputs
+  .input--date--error::-webkit-datetime-edit-year-field,
+.form__section__grid--inputs .input--date--error::-webkit-datetime-edit-text {
   color: #e36262;
 }
 
@@ -273,16 +298,16 @@ body {
   .form__section--container
   .form__section__grid--inputs
   .label--minPricePlaceholder {
-    left: 740px;
-    top: 554px;
+  left: 740px;
+  top: 554px;
 }
 
 .form__section
   .form__section--container
   .form__section__grid--inputs
   .label--maxPricePlaceholder {
-    left: 918px;
-    top: 554px;
+  left: 918px;
+  top: 554px;
 }
 
 .form__section
@@ -409,7 +434,7 @@ body {
 
 .container__description__right--section {
   width: 50%;
-  margin-top: 2%; 
+  margin-top: 2%;
 }
 
 /* ----------------------------------------------------- */
