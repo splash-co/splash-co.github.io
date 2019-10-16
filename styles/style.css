@@ -18,10 +18,12 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  height: 2316px;
+  height: 3016px;
 }
 
 * {
@@ -33,28 +35,28 @@ body {
 
 .content__container {
   height: 100%;
-  display: grid;
 }
 
 /* ----------------------------------------------------- */
 /* ---------------- SEÇÃO DE ESTILIZAÇÃO --------------- */
 /* ----------------------------------------------------- */
 
+/* ----------------------------------------------------- */
 /* ------------- ESTILIZAÇÃO HEADER (1ª SEÇÃO) --------- */
+/* ----------------------------------------------------- */
+
 
 .header__container {
-  height: 31.9%;
+  height: 23.8%;
   width: 100%;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../assets/background_header.png'), no-repeat
-  ;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/background_header.png'), no-repeat;
 }
 
 .header__container .navbar__container {
   display: flex;
   justify-content: space-between;
-  margin: 2.1% 4% 0 4.4%;
+  padding: 2.1% 4% 0 4.4%;
 }
 
 .header__container .navbar__container .anchor__container {
@@ -77,15 +79,15 @@ body {
 
 .section__container--content {
   margin: 5.5% 4% 0 4.4%;
-  display: flex;  
+  display: flex;
   justify-content: space-between;
-  height: 70%
+  height: 70%;
 }
 
 .section__container--content .description__container {
   color: #fff;
   margin-top: 7%;
-  width: 33%; 
+  width: 33%;
 }
 
 .section__container--content .description__container h1 {
@@ -102,7 +104,7 @@ body {
 
 .section__container--content .form__section {
   background-color: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   user-select: none;
   width: 47%;
   height: 100%;
@@ -127,8 +129,10 @@ body {
   align-self: end;
 }
 
-.section__container--content .form__section 
-.form__section--container .form__element--input {
+.section__container--content
+  .form__section
+  .form__section--container
+  .form__element--input {
   border: 1px solid #cacaca;
   border-radius: 2px;
   outline: none;
@@ -168,7 +172,7 @@ body {
   height: 45%;
   margin-left: 2px;
 }
-
+    
 .form__section .form__section--container .form__section__grid--inputs .input--date {
   background-image: url('../assets/vectors/calendar_icon_placeholder.png');
   background-repeat: no-repeat;
@@ -199,7 +203,10 @@ body {
   display: none;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .select--city {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .select--city {
   grid-column: 2;
   grid-row: 2;
   height: 100%;
@@ -211,18 +218,28 @@ body {
   padding: 2px;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .div--button__script {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .div--button__script {
   display: flex;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .div--button__script img {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .div--button__script
+  img {
   width: 24px;
   height: 17px;
   align-self: center;
   margin-left: 14%;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .input--value {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .input--value {
   width: 40%;
   height: 100%;
   background-color: white;
@@ -230,7 +247,10 @@ body {
   padding-left: 18%;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .form__element--button {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .form__element--button {
   cursor: pointer;
   width: 14%;
   height: 74%;
@@ -244,24 +264,38 @@ body {
   color: #136299;
 }
 
-.form__section .form__section--container 
-.form__section__grid--inputs .form__element--labelPlaceholder {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .form__element--label__input {
+  position: relative;
+  height: 100%;
+}
+
+.form__element--label__input::before {
+  content: attr(data-domain);
   position: absolute;
+  font-family: 'Lato';
+  top: 19%;
+  left: 2%;
 }
 
-.form__section .form__section--container 
-.form__section__grid--inputs .label--minPricePlaceholder {
-  top: 82.7%;
-  left: 54.8%;
+.form__section__grid--inputs
+.label__input--maxPrice {
+  grid-column: 2;
+  grid-row: 2;
 }
 
-.form__section .form__section--container 
-.form__section__grid--inputs .label--maxPricePlaceholder {
-  top: 82.7%;
-  left: 68%;
+.form__section__grid--inputs
+.label__input--minPrice {
+  grid-column: 1;
+  grid-row: 2;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .input--minPrice {
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .input--minPrice {
   grid-column: 1;
   grid-row: 2;
   height: 100%;
@@ -269,9 +303,10 @@ body {
   padding-left: 14%;
 }
 
-.form__section .form__section--container .form__section__grid--inputs .input--maxPrice {
-  grid-column: 2;
-  grid-row: 2;
+.form__section
+  .form__section--container
+  .form__section__grid--inputs
+  .input--maxPrice {
   height: 100%;
   width: 96%;
   padding-left: 14%;
@@ -298,10 +333,9 @@ body {
   user-select: none;
   position: absolute;
   z-index: 999;
-  background: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, 0.8);
   width: 100%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -341,11 +375,219 @@ body {
   animation: spinHourly 1.5s infinite reverse;
 }
 
-@keyframes spinHourly {
-  from {
-    transform: rotate(0deg)
-  }
-  to {
-    transform: rotate(360deg)
-  }
+.container__confirm--submit img {
+  width: 80px;
+}
+#success p,
+#failure p {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* ----------------------------------------------------- */
+/* ------ ESTILIZAÇÃO SEGUNDA SECTION (2ª SEÇÃO) ------- */
+/* ----------------------------------------------------- */
+
+.section1__container {
+  display: flex;
+  margin-top: 7%;
+  height: 22.17%;
+}
+
+.section1__container .container__description__left--section {
+  margin: 12% 6% 7% 6%;
+  width: 50%;
+}
+
+.section1__container .container__description__left--section h1 {
+  font-size: 30px;
+  color: #136299;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.section1__container .container__description__left--section p {
+  color: #000;
+  font-size: 22px;
+  line-height: 36px;
+}
+
+.container__description__right--section {
+  width: 50%;
+  margin-top: 2%; 
+}
+
+.container__description__right--section img {
+  width: 100%;
+}
+
+/* ----------------------------------------------------- */
+/* ----- ESTILIZAÇÃO TERCEIRA SECTION (3ª SEÇÃO) ------- */
+/* ----------------------------------------------------- */
+
+.section2__container {
+  width: 100%;
+  margin-top: 5%;
+  padding-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.section2__container .content__square__icon--card {
+  justify-self: center;
+  display: flex;
+  width: 100%;
+  height: 381px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section2__container .content__square__icon--card h1 {
+  font-size: 20px;
+  color: #136299;
+  line-height: 50px;
+}
+
+.section2__container .content__square__icon--card p {
+  font-size: 16px;
+  line-height: 100%;
+}
+.section2__container .content__square__icon--card img {
+  width: 50%;
+}
+
+/* ----------------------------------------------------- */
+/* ----- ESTILIZAÇÃO QUARTA SECTION (4ª SEÇÃO) ------- */
+/* ----------------------------------------------------- */
+
+.section3__container {
+  margin-top: 10%;
+  height: 26.2%;
+  width: 100%;
+  background-color: #136299;
+  display: flex;
+}
+
+.section3__container .section__form {
+  width: 50%;
+  margin: 4% 17% 4% 6%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section3__container .section__form h1 {
+  color: #fff;
+  font-size: 32px;
+}
+
+.section3__container .section__form h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.section3__container .section__form label {
+  color: white;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.section3__container .section__form input {
+  height: 38px;
+  width: 80%;
+  border: 2px solid #cccccc;
+  border-radius: 2px;
+  outline: none;
+  font-size: 16px;
+  padding: 6px;
+  margin-bottom: 20px;
+}
+
+.section3__container .section__form textarea {
+  resize: none;
+  width: 80%;
+  outline: none;
+  padding: 6px;
+  height: 72px;
+  border: 2px solid #cccccc;
+  border-radius: 2px;
+  margin-bottom: 47px;
+}
+
+.section3__container .section__form .form__submit {
+  width: 136px;
+  border: none;
+  background-color: #fff;
+  height: 33px;
+  color: #2f1f2b;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.section3__container .section__image--description {
+  width: 40%;
+  display: grid;
+  direction: rtl;
+  align-items: center;
+}
+
+.section3__container .section__image--description img {
+  width: 100%;
+  height: 58%;
+}
+
+/* ----------------------------------------------------- */
+/* ------ ESTILIZAÇÃO FOOTER SECTION (5ª SEÇÃO) -------- */
+/* ----------------------------------------------------- */
+
+.footer__container {
+  height: 8.5%;
+  background-color: #292929;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.footer__container .description__section--container {
+  display: flex;
+  margin: 2% 4%;
+  width: 94%;
+}
+
+.description__section--container .description__section--container--left {
+  padding-top: 4%;
+  width: 50%;
+}
+
+.description__section--container--left .description--icon  {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.description__section--container--left .description--icon h4 {
+  color: white;
+  margin-left: 2%;
+}
+
+.description__section--container--left .description--icon div {
+  border-radius: 50%;
+  background-color: #4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.description__section--container--left .description--icon div img {
+  position: relative;
+  width: 48%;
+  height: 48%;
 }
