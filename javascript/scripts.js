@@ -2,6 +2,14 @@ $(document).ready(() => {
   $('.input--telephone').mask('(00) 90000-0000');
 });
 
+function validateKeyStrokes(event) {
+  var charCode = event.which ? event.which : event.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    return true;
+  }
+  return false;
+}
+
 const changeValueButton = (signal, check) => {
   if (check) {
     let inputValue = parseInt(
@@ -14,9 +22,8 @@ const changeValueButton = (signal, check) => {
       return (inputValue = 1);
     }
 
-    document.querySelector(
-      '.input__value--quantityDay'
-    ).value = `${inputValue}`;
+    document.querySelector('.input__value--quantityDay').value = `${inputValue}`;
+
   } else {
     let inputValue = parseInt(
       document.querySelector('.input__value--quantityPeople').value
@@ -28,11 +35,11 @@ const changeValueButton = (signal, check) => {
       return (inputValue = 2);
     }
 
-    document.querySelector(
-      '.input__value--quantityPeople'
-    ).value = `${inputValue}`;
+    document.querySelector('.input__value--quantityPeople').value = `${inputValue}`;
   }
 };
+
+const checkValues = className => {};
 
 const fetchData = () => {
   const api = 'https://splashco.herokuapp.com/api/landing/submit';
@@ -47,41 +54,15 @@ const fetchData = () => {
     numDays: document.querySelector('.input__value--quantityDay').value,
     minPrice: document.querySelector('.input--minPrice').value,
     maxPrice: document.querySelector('.input--maxPrice').value
-  };
-
-  const modal = document.querySelector('.container__confirm--submit');
-  const modalText = document.querySelector('.container__confirm--submit p');
-
-  modalText.style.textAlign = 'center';
-  modal.classList.toggle('none');
-  document.body.style.overflow = 'hidden';
-
-  return fetch(api, {
-    method: 'POST',
-    body: JSON.stringify(bodyProperty),
-    headers: {
-      'Content-type': 'application/json'
-    }
-  })
-    .then(res => {
-      if (res.ok) {
-        modal.classList.toggle('none');
-        document.querySelector('#success').classList.toggle('none');
-      } else {
-        modal.classList.add('none');
-        document.querySelector('#failure').classList.toggle('none');
-      }
-    })
-    .catch(err => {
-      const error = { err };
-
-      switch (error.err.message) {
-        case '"fullName" is not allowed to be empty':
-          console.log('banaan');
-          const input = document.querySelector('.input--name');
-          break;
-      }
-    });
+  }
 };
 
-const refreshPage = () => window.location.reload();
+const validateFullname = (evt) => {
+  if (evt.target.value.length < 2) {
+    document
+      .querySelector('.input--name')
+      .classList.add('form__element--input--error')
+
+      document.querySelector('.form__element--finish__button').disabled = true
+  }
+};
