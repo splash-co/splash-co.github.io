@@ -62,7 +62,6 @@ const validateFullname = (evt, className) => {
     document
       .querySelector(className)
       .classList.add('form__element--input--error')
-
       document.querySelector('.form__element--finish__button').disabled = true
   }
 };
