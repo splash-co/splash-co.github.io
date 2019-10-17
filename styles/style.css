@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/Roboto/Roboto-Regular.ttf');
+  src: url('../fonts/Lato/Lato-Regular.ttf');
 }
 
 @font-face {
@@ -65,6 +65,13 @@ body {
   --section-2-square-width: 280px;
   --section-2-square-h1-size: 20px;
   --section-2-square-p-size: 15px;
+
+  /* SECTION 3 */
+  --section-3-display: flex;
+  --section-3-padding: 110px 0 185px 125px;
+  --section-3-form-width: 45%;
+  --section-3-form-h1-size: 32px;
+  --section-3-form-h3-size: 22px;
 }
 
 /* ----------------------------------------------------- */
@@ -494,29 +501,30 @@ body {
 
 .section3__container {
   margin-top: 11%;
-  height: 24.2%;
   background-color: #136299;
-  display: flex;
+  display: var(--section-3-display);
+  justify-content: space-between;
+  padding: var(--section-3-padding);
 }
 
 .section3__container .section__form {
-  width: 50%;
-  margin: 4% 17% 4% 6%;
+  width: var(--section-3-form-width);
   display: flex;
   flex-direction: column;
 }
 
 .section3__container .section__form h1 {
   color: #fff;
-  font-size: 32px;
+  font-size: var(--section-3-form-h1-size);
 }
 
 .section3__container .section__form h3 {
   color: #fff;
-  font-size: 20px;
+  font-size: var(--section-3-form-h3-size);
   margin-top: 20px;
   margin-bottom: 40px;
-  font-weight: 300;
+  font-weight: bold;
+  line-height: 40px;
 }
 
 .section3__container .section__form label {
