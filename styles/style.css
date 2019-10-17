@@ -38,6 +38,7 @@ body {
 /* VARIABLES */
 
 :root {
+  /* HEADER */
   --header-height: 739px;
   --navbar-padding: 28px 90px 0 59px;
   --navbar-font-size: 22px;
@@ -47,6 +48,11 @@ body {
   --description-h1-size: 30px;
   --description-h1-line-height: 45px;
   --description-h1-mb: 22px;
+
+  /* FORM */
+  --form-width: 571px;
+  --form-height: 545px;
+  --form-padding: 68px 45px 0 40px;
 }
 
 /* ----------------------------------------------------- */
@@ -117,12 +123,12 @@ body {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   user-select: none;
-  width: 47%;
-  height: 100%;
+  width: var(--form-width);
+  height: var(--form-height);
+  padding: var(--form-padding);
 }
 
 .section__container--content .form__section .form__section--container {
-  margin: 6% 4% 0 4%;
   display: flex;
   flex-direction: column;
   height: 90%;
