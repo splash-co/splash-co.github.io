@@ -265,6 +265,7 @@ body {
   font-size: 1.1em;
   margin-bottom: 2.5%;
   height: 30px;
+  margin-top: 5px;
 }
 
 .price_input {
@@ -295,8 +296,8 @@ body {
 }
 
 .change_number_button {
-  width: 14%;
-  height: 74%;
+  height: 23px;
+  width: 23px;
   align-self: center;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -304,7 +305,10 @@ body {
   border-radius: 2px;
   font-weight: 600;
   color: #136299;
-  height: 20px;
+}
+
+.deafult_label {
+  margin-bottom: 5px;
 }
 
 .dynamic_number_input{
@@ -313,6 +317,10 @@ body {
   background-color: white;
   border: none;
   padding-left: 18%;
+  outline: none;
+  padding: 6px;
+  font-size: 1.1em;
+  text-align: center;
 }
 
 .change_number_button:hover {
@@ -396,7 +404,7 @@ body {
   height: 100%;
   background-color: white;
   border: none;
-  padding-left: 18%;
+  text-align: center;
 }
 
 .form__section
