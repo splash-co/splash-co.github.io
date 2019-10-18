@@ -256,6 +256,33 @@ body {
   grid-template-rows: repeat(2, 50%);
 }
 
+.default_input {
+  width: 100%;
+  border: 1px solid #cacaca;
+  border-radius: 2px;
+  outline: none;
+  padding: 6px;
+  font-size: 1.1em;
+  margin-bottom: 2.5%;
+  height: 30px;
+}
+
+.price_input {
+  padding-left: 27px;
+  font-size: 15px;
+}
+
+.price_prefix {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 6px;
+}
+
+.form_section_wrapper {
+  width: 32%;
+  display: inline-block;
+}
+
 .form__section .form__section--container .form__section__grid--inputs label {
   align-self: center;
   height: 45%;

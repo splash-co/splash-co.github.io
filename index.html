@@ -102,39 +102,45 @@
               </div>
             </div>
 
-            <div class="form__section__grid--inputs">
-              <label class="form__element--label label--minPrice">
-                Preço mínimo
-              </label>
-              <label class="form__element--labelPlaceholder label--minPricePlaceholder">
-                R$
-              </label>
-              <input class="form__element--input form__element--input--placeholder--error input--minPrice" min="0"
-                type="number" required />
 
-              <label class="form__element--label label--maxPrice">
-                Preço máximo
-              </label>
-              <label class="form__element--labelPlaceholder label--maxPricePlaceholder">
-                R$
-              </label>
-              <input class="form__element--input input--maxPrice" min="0" type="number" required />
 
-              <label class="form__element--label label--quantityDays">
-                Quantidade de dias
-              </label>
-              <div class="form__element--div div--button__script">
-                <button class="form__element--button" type="button" onclcick="changeValueButton(false, true)">
-                  -
-                </button>
-                <input class="form__element--input input--value input__value--quantityDay" value="1" disabled
-                  required />
-                <button class="form__element--button" type="button" onclick="changeValueButton(true, true)">
-                  +
-                </button>
+
+            <div class="form__section__div--inputs">
+              <div class="form_section_wrapper">
+                <label class="">
+                  Preço mínimo
+                </label>
+                <label class="price_prefix">
+                  R$
+                </label>
+                <input class="default_input price_input" min="0"
+                  type="number" required />
+              </div>
+              <div class="form_section_wrapper">
+                <label class="">
+                    Preço máximo
+                  </label>
+                  <label class="price_prefix">
+                    R$
+                  </label>
+                  <input class="default_input price_input" min="0" type="number" required />
+              </div>
+              <div class="form_section_wrapper">
+                <label class="">
+                  Quantidade de dias
+                </label>
+                <div class="">
+                  <button class="" type="button" onclcick="changeValueButton(false, true)">
+                    -
+                  </button>
+                  <input class="" value="1" disabled
+                    required />
+                  <button class="" type="button" onclick="changeValueButton(true, true)">
+                    +
+                  </button>
+                </div>
               </div>
             </div>
-
             <button type="button" class="form__element--finish__button" onclick="fetchData()">
               FAZER RESERVA
             </button>
