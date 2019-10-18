@@ -283,6 +283,10 @@ body {
   display: inline-block;
 }
 
+.form__section__div--inputs {
+  margin-top: 12px;
+}
+
 .form__section .form__section--container .form__section__grid--inputs label {
   align-self: center;
   height: 45%;
