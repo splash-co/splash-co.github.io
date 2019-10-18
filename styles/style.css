@@ -520,12 +520,12 @@ body {
   margin-top: 44px;
   font-size: var(--section-2-square-h1-size);
   color: #136299;
-  line-height: 50px;
   font-weight: 800;
 }
 
 .section2__container .content__square__icon--card p {
   font-size: var(--section-2-square-p-size);
+  margin-top: 15px;
   line-height: 16px;
 }
 
