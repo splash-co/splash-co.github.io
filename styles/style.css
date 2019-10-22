@@ -45,7 +45,7 @@ body {
   --navbar-font-weight: 600;
   --content-margin: 140px 85px 0 59px;
   --content-display: flex;
-  --description-margin: 40px;
+  --description-margin: 40px 0 0 0;
   --description-width: 50%;
   --description-h1-size: 30px;
   --description-h1-line-height: 45px;
@@ -93,7 +93,8 @@ body {
     /* HEADER */
     --content-display: block;
     --content-margin: 0 85px 0 59px;
-    --description-width: 50%;
+    --description-width: 70%;
+    --description-margin: 40px auto 0 auto;
 
     /* FORM */
     --form-margin: 80px auto 0 auto;
@@ -117,6 +118,12 @@ body {
 
   .section3__container .section__form {
     margin-top: -60px;
+  }
+
+  .section__container--content .description__container h1,
+  .section__container--content .description__container p {
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
   }
 }
 
@@ -167,7 +174,7 @@ body {
 
 .section__container--content .description__container {
   color: #fff;
-  margin-top: var(--description-margin);
+  margin: var(--description-margin);
   width: var(--description-width);
 }
 
@@ -311,7 +318,7 @@ body {
   margin-bottom: 5px;
 }
 
-.dynamic_number_input{
+.dynamic_number_input {
   width: 40%;
   height: 100%;
   background-color: white;
