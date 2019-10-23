@@ -44,6 +44,7 @@ body {
   --navbar-font-size: 22px;
   --navbar-font-weight: 600;
   --navber-a-container-flex: 0 1 615px;
+  --navbar-a-container-display: flex;
   --content-margin: 140px 85px 0 59px;
   --content-display: flex;
   --description-margin: 40px 0 0 0;
@@ -57,6 +58,8 @@ body {
   --form-height: 545px;
   --form-padding: 68px 45px 0 40px;
   --form-margin: 0;
+  --form-grid-columns: repeat(3, 1fr);
+  --form-finish-btn-mt: 4%;
 
   /* SECTION 1 */
   --section-1-display: flex;
@@ -177,6 +180,54 @@ body {
   }
 }
 
+@media screen and (max-width: 750px) {
+  :root {
+    /* HEADER */
+    --navbar-padding: 20px 90px 0 30px;
+    --navbar-a-container-display: none;
+    --description-width: 85%;
+    --content-margin: 0;
+    --description-h1-size: 27px;
+
+    /* FORM */
+    --form-width: 88%;
+    --form-height: none;
+    --form-grid-columns: repeat(2, 50%);
+    --form-padding: 68px 45px 40px 40px;
+    --form-finish-btn-mt: 10%;
+  }
+
+  .header__container .navbar__container .logo {
+    width: 100px;
+  }
+
+  .form__section .form__section--container .form__section__grid--inputs {
+    margin-bottom: 50px;
+  }
+
+  .form__section__div--inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form_section_wrapper {
+    flex: 0 1 48%;
+  }
+
+  .form_section_wrapper:last-of-type {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .form_section_wrapper:last-of-type .margin_wrapper {
+    flex: 1;
+    margin-left: 10px;
+  }
+}
+
 /* ----------------------------------------------------- */
 /* ---------------- SEÇÃO DE ESTILIZAÇÃO --------------- */
 /* ----------------------------------------------------- */
@@ -199,7 +250,7 @@ body {
 }
 
 .header__container .navbar__container .anchor__container {
-  display: flex;
+  display: var(--navbar-a-container-display);
   flex: var(--navber-a-container-flex);
   align-items: center;
   justify-content: space-evenly;
@@ -309,7 +360,7 @@ body {
 
 .form__section .form__section--container .form__section__grid--inputs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: var(--form-grid-columns);
   grid-template-rows: repeat(2, 50%);
 }
 
@@ -321,7 +372,7 @@ body {
   padding: 6px;
   font-size: 1.1em;
   margin-bottom: 2.5%;
-  height: 30px;
+  height: ;
   margin-top: 5px;
 }
 
@@ -531,7 +582,7 @@ body {
   width: 35%;
   padding: 2%;
   background-color: #136299;
-  margin-top: 4%;
+  margin-top: var(--form-finish-btn-mt);
   color: #fff;
   border: none;
   font-weight: bold;
