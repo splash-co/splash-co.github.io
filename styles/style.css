@@ -288,17 +288,15 @@ body {
 @media screen and (max-width: 600px) {
   :root {
     --description-h1-size: 22px;
-    --description-h1-line-height: 28px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  :root {
+    --description-h1-line-height: 35px;
     --form-padding: 40px 15px 40px 15px;
     --description-p-size: 18px;
     --description-p-lh: 23px;
     --form-margin: 40px auto 0 auto;
   }
+}
+
+@media screen and (max-width: 350px) {
 }
 
 /* ----------------------------------------------------- */
