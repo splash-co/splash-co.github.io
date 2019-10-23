@@ -92,6 +92,14 @@ body {
   /* FOOTER */
   --footer-padding: 60px 50px 60px 120px;
   --footer-info-size: 18px;
+  --footer-direction: row;
+  --footer-contact-order: 0;
+  --footer-children-width: 50%;
+  --footer-about-1st-p-size: 30px;
+  --footer-about-p-size: 18px;
+  --footer-about-p-margin: 30px 0;
+  --footer-icon-size: 45px;
+  --footer-icon-container-margin: 30px 0;
 }
 
 @media screen and (max-width: 950px) {
@@ -143,6 +151,29 @@ body {
   .section__container--content .description__container p {
     text-align: center;
     text-shadow: 1px 1px 3px black;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --footer-direction: column;
+    --footer-contact-order: 1;
+    --footer-children-width: 100%;
+    --footer-padding: 30px 40px;
+    --footer-about-1st-p-size: 24px;
+    --footer-about-p-size: 16px;
+    --footer-about-p-margin: 20px 0;
+    --footer-icon-size: 28px;
+    --footer-info-size: 16px;
+    --footer-icon-container-margin: 18px 0;
+  }
+
+  .footer__container .about {
+    margin-bottom: 30px;
+  }
+
+  .footer__container .contact .logo {
+    width: 110px;
   }
 }
 
@@ -736,22 +767,24 @@ body {
 .footer__container {
   background-color: #292929;
   display: flex;
+  flex-direction: var(--footer-direction);
   justify-content: space-between;
   padding: var(--footer-padding);
 }
 
 .footer__container .contact {
-  width: 50%;
+  width: var(--footer-children-width);
+  order: var(--footer-contact-order);
 }
 
 .footer__container .contact .info-icon-container {
   display: flex;
   align-items: center;
-  margin: 30px 0;
+  margin: var(--footer-icon-container-margin);
 }
 
 .footer__container .contact .info-icon-container img {
-  width: 35px;
+  width: var(--footer-icon-size);
 }
 
 .footer__container .contact .info-icon-container p {
@@ -762,24 +795,24 @@ body {
 }
 
 .footer__container .about {
-  width: 50%;
+  width: var(--footer-children-width);
   padding-right: 100px;
 }
 
 .footer__container .about p {
   color: #6c7175;
-  font-size: 18px;
-  margin: 30px 0;
+  font-size: var(--footer-about-p-size);
+  margin: var(--footer-about-p-margin);
 }
 
 .footer__container .about p:first-of-type {
   color: #fff;
-  font-size: 30px;
+  font-size: var(--footer-about-1st-p-size);
   font-weight: bold;
   margin: 0;
 }
 
 .footer__container .about .icons-container img {
-  width: 45px;
+  width: var(--footer-icon-size);
   margin-right: 15px;
 }
