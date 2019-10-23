@@ -43,6 +43,7 @@ body {
   --navbar-padding: 28px 90px 0 59px;
   --navbar-font-size: 22px;
   --navbar-font-weight: 600;
+  --navber-a-container-flex: 0 1 615px;
   --content-margin: 140px 85px 0 59px;
   --content-display: flex;
   --description-margin: 40px 0 0 0;
@@ -99,6 +100,8 @@ body {
     --content-margin: 0 85px 0 59px;
     --description-width: 70%;
     --description-margin: 40px auto 0 auto;
+    --navbar-font-size: 16px;
+    --navber-a-container-flex: 0 1 440px;
 
     /* FORM */
     --form-margin: 80px auto 0 auto;
@@ -165,7 +168,7 @@ body {
 
 .header__container .navbar__container .anchor__container {
   display: flex;
-  flex: 0 1 615px;
+  flex: var(--navber-a-container-flex);
   align-items: center;
   justify-content: space-evenly;
 }
