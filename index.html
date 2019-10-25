@@ -59,18 +59,17 @@
             <label class="form__element--label label--name" for="input--name">
               Seu nome completo
             </label>
-            <input class="form__element--input input--name" onkeypress="return validateKeyStrokes(event)"
-              onblur="validateFullname(event)" required />
+            <input class="form__element--input input--name" onblur="validateFullname(event)" required />
 
             <label class="form__element--label label--email" for="input--email">
               Seu e-mail
             </label>
-            <input class="form__element--input input--email" type="email" required />
+            <input class="form__element--input input--email" onblur="validateEmail(event)" type="email" required />
 
             <label class="form__element--label" for="input--telephone">
               Seu telefone
             </label>
-            <input class="form__element--input input--telephone" type="tel" required />
+            <input class="form__element--input input--telephone" onblur="validatePhone(event)" type="tel" required />
 
             <div class="form__section__grid--inputs">
               <label class="form__element--label label--date" for="input--date">
@@ -130,7 +129,7 @@
                   Quantidade de dias
                 </label>
                 <div class="margin_wrapper">
-                  <button class="change_number_button" type="button" onclcick="changeValueButton(false, true)">
+                  <button class="change_number_button" type="button" onclick="changeValueButton(false, true)">
                     -
                   </button>
                   <input class="dynamic_number_input" value="1" disabled
