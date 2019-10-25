@@ -435,6 +435,11 @@ body {
   grid-template-rows: repeat(2, 50%);
 }
 
+.form__section .form__section--container .error-message {
+  color: #e36262;
+  margin-bottom: 15px;
+}
+
 .default_input {
   width: 100%;
   border: 1px solid #cacaca;
@@ -665,8 +670,10 @@ body {
 }
 
 .container__confirm--submit {
+  display: flex;
   user-select: none;
-  position: absolute;
+  position: fixed;
+  top: 0;
   z-index: 999;
   background: rgba(255, 255, 255, 0.8);
   width: 100%;
@@ -674,7 +681,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: none;
 }
 
 .container__confirm--submit p {
@@ -717,6 +723,15 @@ body {
 #failure p {
   text-align: center;
   margin-top: 50px;
+}
+
+@keyframes spinHourly {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
 }
 
 /* ----------------------------------------------------- */
@@ -936,4 +951,8 @@ body {
 .footer__container .about .icons-container img {
   width: var(--footer-icon-size);
   margin-right: 15px;
+}
+
+.none {
+  display: none;
 }

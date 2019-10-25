@@ -42,35 +42,100 @@ const changeValueButton = (signal, check) => {
   }
 };
 
-const checkValues = className => {};
+const changePeopleQty = num => {
+  let inputValue = document.querySelector('.input__value--quantityPeople')
+    .value;
+
+  const inputResult = Number(inputValue) + num;
+
+  if (inputResult < 2) {
+    document.querySelector('.input__value--quantityPeople').value = '2';
+  } else {
+    document.querySelector('.input__value--quantityPeople').value = String(
+      inputResult
+    );
+  }
+};
+
+const changeDaysQty = num => {
+  let inputValue = document.querySelector('.dynamic_number_input').value;
+
+  const inputResult = Number(inputValue) + num;
+
+  if (inputResult < 1) {
+    document.querySelector('.dynamic_number_input').value = '1';
+  } else {
+    document.querySelector('.dynamic_number_input').value = String(inputResult);
+  }
+};
 
 const fetchData = () => {
   const api = 'https://splashco.herokuapp.com/api/landing/submit';
 
   const bodyProperty = {
-    fullName: document.querySelector('.input--name'),
+    fullName: document.querySelector('.input--name').value,
     email: document.querySelector('.input--email').value,
     phone: $('.input--telephone').cleanVal(),
     city: document.querySelector('.select--city').value,
     numPeople: document.querySelector('.input__value--quantityPeople').value,
     rentDate: document.querySelector('.input--date').value,
-    numDays: document.querySelector('.input__value--quantityDay').value,
+    numDays: document.querySelector('.dynamic_number_input').value,
     minPrice: document.querySelector('.input--minPrice').value,
     maxPrice: document.querySelector('.input--maxPrice').value
   };
+
+  const modal = document.querySelector('.container__confirm--submit');
+  const modalText = document.querySelector('.container__confirm--submit p');
+
+  modalText.style.textAlign = 'center';
+  modal.classList.toggle('none');
+  document.body.style.overflow = 'hidden';
+  
+  console.log('i`m here')
+
+  fetch(api, {
+    method: 'POST',
+    body: JSON.stringify(bodyProperty),
+    headers: {
+      'Content-type': 'application/json'
+    }
+  }).then(res => {
+    if (res.ok) {
+      modal.classList.toggle('none');
+      document.querySelector('#success').classList.toggle('none');
+    } else {
+      modal.classList.add('none');
+      document.querySelector('#failure').classList.toggle('none');
+    }
+  });
 };
 
+const refreshPage = () => window.location.reload();
+
 const validateFullname = evt => {
-  if (evt.target.value.length < 2 || !evt.target.value.match(/^[A-Za-z]+$/)) {
+  if (evt.target.value.length < 2 || !evt.target.value.match(/^[A-Za-z\s]+$/)) {
     document
       .querySelector('.input--name')
       .classList.add('form__element--input--error');
+
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'Nomes devem ter pelo menos 2 caracteres e apenas letras';
+    p.setAttribute('id', 'error-message-name');
+
+    document.querySelector('.form__section--container').prepend(p);
 
     document.querySelector('.form__element--finish__button').disabled = true;
   } else {
     document
       .querySelector('.input--name')
       .classList.remove('form__element--input--error');
+
+    document
+      .querySelectorAll('#error-message-name')
+      .forEach(el =>
+        document.querySelector('.error-message').parentNode.removeChild(el)
+      );
 
     document.querySelector('.form__element--finish__button').disabled = false;
   }
@@ -86,11 +151,24 @@ const validateEmail = evt => {
       .querySelector('.input--email')
       .classList.add('form__element--input--error');
 
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'Por favor, insira um email válido';
+    p.setAttribute('id', 'error-message-email');
+
+    document.querySelector('.form__section--container').prepend(p);
+
     document.querySelector('.form__element--finish__button').disabled = true;
   } else {
     document
       .querySelector('.input--email')
       .classList.remove('form__element--input--error');
+
+    document
+      .querySelectorAll('#error-message-email')
+      .forEach(el =>
+        document.querySelector('.error-message').parentNode.removeChild(el)
+      );
 
     document.querySelector('.form__element--finish__button').disabled = false;
   }
@@ -102,14 +180,25 @@ const validatePhone = evt => {
       .querySelector('.input--telephone')
       .classList.add('form__element--input--error');
 
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'Por favor, insira um número de telefone válido';
+    p.setAttribute('id', 'error-message-phone');
+
+    document.querySelector('.form__section--container').prepend(p);
+
     document.querySelector('.form__element--finish__button').disabled = true;
   } else {
     document
       .querySelector('.input--telephone')
       .classList.remove('form__element--input--error');
 
+    document
+      .querySelectorAll('#error-message-phone')
+      .forEach(el =>
+        document.querySelector('.error-message').parentNode.removeChild(el)
+      );
+
     document.querySelector('.form__element--finish__button').disabled = false;
   }
 };
-
-
