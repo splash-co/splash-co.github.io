@@ -112,6 +112,7 @@ const fetchData = () => {
 
 const refreshPage = () => window.location.reload();
 
+// FIRST FORM
 const validateFullname = evt => {
   if (evt.target.value.length < 2 || !evt.target.value.match(/^[A-Za-z\s]+$/)) {
     document
@@ -202,3 +203,134 @@ const validatePhone = evt => {
     document.querySelector('.form__element--finish__button').disabled = false;
   }
 };
+
+// SECOND FORM
+const validateFullnameSuggestion = evt => {
+  if (evt.target.value.length < 2 || !evt.target.value.match(/^[A-Za-z\s]+$/)) {
+    document
+      .querySelector('.input--name--suggestion')
+      .classList.add('form__element--input--error');
+
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'Nomes devem ter pelo menos 2 caracteres e apenas letras';
+    p.setAttribute('id', 'error-message-name');
+
+    document
+      .querySelector('.section__form h3')
+      .insertAdjacentElement("afterend", p)    
+
+    document.querySelector('.form__submit').disabled = true;
+  } else {
+    document
+      .querySelector('.input--name--suggestion')
+      .classList.remove('form__element--input--error');
+
+    document
+      .querySelectorAll('#error-message-name')
+      .forEach(() =>
+        document.querySelector('.error-message').remove()
+      );
+
+    document.querySelector('.form__submit').disabled = false;
+  }
+};
+
+const validateEmailSuggestion = evt => {
+  if (
+    !evt.target.value.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+  ) {
+    document
+      .querySelector('.input--email--suggestion')
+      .classList.add('form__element--input--error');
+
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'Por favor, insira um email válido';
+    p.setAttribute('id', 'error-message-email');
+
+    document
+      .querySelector('.section__form h3')
+      .insertAdjacentElement("afterend", p)    
+
+    document.querySelector('.form__submit').disabled = true;
+  } else {
+    document
+      .querySelector('.input--email')
+      .classList.remove('form__element--input--error');
+
+    document
+      .querySelectorAll('#error-message-email')
+      .forEach(() =>
+        document.querySelector('.error-message').remove()
+      );
+
+    document.querySelector('.form__submit').disabled = false;
+  }
+};
+
+const validatePhoneSuggestion = evt => {
+  if (!evt.target.value.match(/^[(]{0,1}[0-9]{2}[)]{0,1}[-\s0-9]{8,13}$/)) {
+    document
+      .querySelector('.input--telephone--suggestion')
+      .classList.add('form__element--input--error');
+
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'Por favor, insira um número de telefone válido';
+    p.setAttribute('id', 'error-message-phone');
+
+    document
+      .querySelector('.section__form h3')
+      .insertAdjacentElement("afterend", p)
+
+    document.querySelector('.form__submit ').disabled = true;
+  } else {
+    document
+      .querySelector('.input--telephone')
+      .classList.remove('form__element--input--error');
+
+    document
+      .querySelectorAll('#error-message-phone')
+      .forEach(() =>
+        document.querySelector('.error-message').remove()
+      );
+
+    document.querySelector('.form__submit').disabled = false;
+  }
+};
+
+const validateMessage = evt => {
+  if (evt.target.value.length < 6) {
+    document
+      .querySelector('textarea')
+      .classList.add()
+
+    var p = document.createElement('p');
+    p.classList.add('error-message');
+    p.innerHTML = 'A mensagem precisa ter no mínimo 6 caracteres.';
+    p.setAttribute('id', 'error-message-phone');
+  
+    document
+      .querySelector('.section__form h3')
+      .insertAdjacentElement("afterend", p)
+
+      console.log(evt.target.value)
+
+    document.querySelector('.form__submit').disabled = true;
+  } else {
+    document
+      .querySelector('textarea')
+      .classList.remove()
+
+    document
+      .querySelectorAll('#error-message-phone')
+      .forEach(() =>
+        document.querySelector('.error-message').remove()
+    );
+
+    document.querySelector('.form__submit').disabled = false;  
+  }
+}

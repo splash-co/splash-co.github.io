@@ -208,22 +208,34 @@
         <label class="label__input--suggestion" for="input--name">
           NOME COMPLETO
         </label>
-        <input type="text" class="form__input--suggestion input--name" />
+        <input 
+          type="text" 
+          class="form__input--suggestion input--name input--name--suggestion" 
+          onblur="validateFullnameSuggestion(event)"
+        />
 
         <label class="label__input--suggestion" for="input--email">
           E-MAIL
         </label>
-        <input type="email" class="form__input--suggestion input--email" />
+        <input 
+          type="email" 
+          class="form__input--suggestion input--email input--email--suggestion" 
+          onblur="validateEmailSuggestion(event)"
+        />
 
         <label class="label__input--suggestion" for="input--telephone">
           TELEFONE
         </label>
-        <input type="tel" class="form__input--suggestion input--telephone" />
+        <input 
+          type="tel" 
+          class="form__input--suggestion input--telephone input--telephone--suggestion"
+          onblur="validatePhoneSuggestion(event)"
+        />
 
         <label class="label__input--suggestion">
           MENSAGEM
         </label>
-        <textarea></textarea>
+        <textarea onblur="validateMessage(event)"></textarea>
         <button type="submit" class="form__submit">ENVIAR</button>
       </section>
       <img src="./assets/vectors/yacht__icon-vector.png" alt="Boat Vector" />
