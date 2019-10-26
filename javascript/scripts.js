@@ -90,8 +90,6 @@ const fetchData = () => {
   modalText.style.textAlign = 'center';
   modal.classList.toggle('none');
   document.body.style.overflow = 'hidden';
-  
-  console.log('i`m here')
 
   fetch(api, {
     method: 'POST',
@@ -258,7 +256,7 @@ const validateEmailSuggestion = evt => {
     document.querySelector('.form__submit').disabled = true;
   } else {
     document
-      .querySelector('.input--email')
+      .querySelector('.input--email--suggestion')
       .classList.remove('form__element--input--error');
 
     document
@@ -289,7 +287,7 @@ const validatePhoneSuggestion = evt => {
     document.querySelector('.form__submit ').disabled = true;
   } else {
     document
-      .querySelector('.input--telephone')
+      .querySelector('.input--telephone--suggestion')
       .classList.remove('form__element--input--error');
 
     document
@@ -333,4 +331,38 @@ const validateMessage = evt => {
 
     document.querySelector('.form__submit').disabled = false;  
   }
+}
+
+const fetchSuggestion = () => {
+  const api = 'https://splashco.herokuapp.com/api/landing/submit-suggestion'
+
+  const propertyBody = {
+    fullName: document.querySelector('.input--name--suggestion').value,
+    email: document.querySelector('.input--email--suggestion').value,
+    phone: $('.input--telephone--suggestion').cleanVal(),
+    message: document.querySelector('textarea').value
+  }
+
+  const modal = document.querySelector('.container__suggestion--submit');
+  const modalText = document.querySelector('.container__suggestion--submit p');
+
+  modalText.style.textAlign = 'center';
+  modal.classList.toggle('none');
+  document.body.style.overflow = 'hidden';
+
+  fetch(api, {
+    method: 'POST',
+    body: JSON.stringify(propertyBody),
+    headers: {
+      'Content-type': 'application/json'
+    }
+  }).then(res => {
+    if (res.ok) {
+      modal.classList.toggle('none');
+      document.querySelector('#success').classList.toggle('none');
+    } else {
+      modal.classList.add('none');
+      document.querySelector('#failure').classList.toggle('none');
+    }
+  });
 }

@@ -24,6 +24,11 @@
     <p>Sucesso! O seu pedido já foi enviado!</p>
   </div>
 
+  <div onclick="refreshPage()" class="container__suggestion--submit none" id="success">
+    <img src="./assets/black-checkmark.png" />
+    <p>Sucesso! A sua sugestão já foi enviada!</p>
+  </div>
+
   <div onclick="refreshPage()" class="container__confirm--submit none" id="failure">
     <img src="./assets/black-close.png" />
     <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
@@ -236,7 +241,9 @@
           MENSAGEM
         </label>
         <textarea onblur="validateMessage(event)"></textarea>
-        <button type="submit" class="form__submit">ENVIAR</button>
+        <button type="submit" class="form__submit" onclick="fetchSuggestion()">
+          ENVIAR
+        </button>
       </section>
       <img src="./assets/vectors/yacht__icon-vector.png" alt="Boat Vector" />
 
