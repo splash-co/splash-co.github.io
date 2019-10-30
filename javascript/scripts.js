@@ -125,6 +125,8 @@ const validateFullname = evt => {
     document.querySelector('.form__section--container').prepend(p);
 
     document.querySelector('.form__element--finish__button').disabled = true;
+    document.querySelector('.form__element--finish__button')
+      .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--name')
@@ -137,6 +139,8 @@ const validateFullname = evt => {
       );
 
     document.querySelector('.form__element--finish__button').disabled = false;
+    document.querySelector('.form__element--finish__button')
+      .classList.add('form_element_button_disabled')
   }
 };
 
@@ -158,6 +162,8 @@ const validateEmail = evt => {
     document.querySelector('.form__section--container').prepend(p);
 
     document.querySelector('.form__element--finish__button').disabled = true;
+    document.querySelector('.form__element--finish__button')
+      .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--email')
@@ -170,6 +176,8 @@ const validateEmail = evt => {
       );
 
     document.querySelector('.form__element--finish__button').disabled = false;
+    document.querySelector('.form__element--finish__button')
+    .classList.remove('form_element_button_disabled')
   }
 };
 
@@ -187,6 +195,8 @@ const validatePhone = evt => {
     document.querySelector('.form__section--container').prepend(p);
 
     document.querySelector('.form__element--finish__button').disabled = true;
+    document.querySelector('.form__element--finish__button')
+    .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--telephone')
@@ -199,6 +209,8 @@ const validatePhone = evt => {
       );
 
     document.querySelector('.form__element--finish__button').disabled = false;
+    document.querySelector('.form__element--finish__button')
+    .classList.remove('form_element_button_disabled')
   }
 };
 
@@ -210,7 +222,7 @@ const validateFullnameSuggestion = evt => {
       .classList.add('form__element--input--error');
 
     var p = document.createElement('p');
-    p.classList.add('error-message');
+    p.classList.add('error-message-secondform');
     p.innerHTML = 'Nomes devem ter pelo menos 2 caracteres e apenas letras';
     p.setAttribute('id', 'error-message-name');
 
@@ -219,6 +231,8 @@ const validateFullnameSuggestion = evt => {
       .insertAdjacentElement("afterend", p)    
 
     document.querySelector('.form__submit').disabled = true;
+    document.querySelector('.form__element--finish__button')
+      .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--name--suggestion')
@@ -227,10 +241,11 @@ const validateFullnameSuggestion = evt => {
     document
       .querySelectorAll('#error-message-name')
       .forEach(() =>
-        document.querySelector('.error-message').remove()
+        document.querySelector('.error-message-secondform').remove()
       );
 
     document.querySelector('.form__submit').disabled = false;
+    document.querySelector('.form__submit').classList.remove('button_disabled_style')
   }
 };
 
@@ -245,7 +260,7 @@ const validateEmailSuggestion = evt => {
       .classList.add('form__element--input--error');
 
     var p = document.createElement('p');
-    p.classList.add('error-message');
+    p.classList.add('error-message-secondform');
     p.innerHTML = 'Por favor, insira um email válido';
     p.setAttribute('id', 'error-message-email');
 
@@ -254,6 +269,7 @@ const validateEmailSuggestion = evt => {
       .insertAdjacentElement("afterend", p)    
 
     document.querySelector('.form__submit').disabled = true;
+    document.querySelector('.form__submit').classList.add('button_disabled_style')
   } else {
     document
       .querySelector('.input--email--suggestion')
@@ -262,10 +278,11 @@ const validateEmailSuggestion = evt => {
     document
       .querySelectorAll('#error-message-email')
       .forEach(() =>
-        document.querySelector('.error-message').remove()
+        document.querySelector('.error-message-secondform').remove()
       );
 
-    document.querySelector('.form__submit').disabled = false;
+      document.querySelector('.form__submit').disabled = false;
+      document.querySelector('.form__submit').classList.remove('button_disabled_style')
   }
 };
 
@@ -276,7 +293,7 @@ const validatePhoneSuggestion = evt => {
       .classList.add('form__element--input--error');
 
     var p = document.createElement('p');
-    p.classList.add('error-message');
+    p.classList.add('error-message-secondform');
     p.innerHTML = 'Por favor, insira um número de telefone válido';
     p.setAttribute('id', 'error-message-phone');
 
@@ -285,6 +302,7 @@ const validatePhoneSuggestion = evt => {
       .insertAdjacentElement("afterend", p)
 
     document.querySelector('.form__submit ').disabled = true;
+    document.querySelector('.form__submit').classList.add('button_disabled_style')
   } else {
     document
       .querySelector('.input--telephone--suggestion')
@@ -293,10 +311,11 @@ const validatePhoneSuggestion = evt => {
     document
       .querySelectorAll('#error-message-phone')
       .forEach(() =>
-        document.querySelector('.error-message').remove()
+        document.querySelector('.error-message-secondform').remove()
       );
 
     document.querySelector('.form__submit').disabled = false;
+    document.querySelector('.form__submit').classList.remove('button_disabled_style')
   }
 };
 
@@ -307,7 +326,7 @@ const validateMessage = evt => {
       .classList.add()
 
     var p = document.createElement('p');
-    p.classList.add('error-message');
+    p.classList.add('error-message-secondform');
     p.innerHTML = 'A mensagem precisa ter no mínimo 6 caracteres.';
     p.setAttribute('id', 'error-message-phone');
   
@@ -318,6 +337,7 @@ const validateMessage = evt => {
       console.log(evt.target.value)
 
     document.querySelector('.form__submit').disabled = true;
+    document.querySelector('.form__submit').classList.add('button_disabled_style')
   } else {
     document
       .querySelector('textarea')
@@ -326,10 +346,11 @@ const validateMessage = evt => {
     document
       .querySelectorAll('#error-message-phone')
       .forEach(() =>
-        document.querySelector('.error-message').remove()
+        document.querySelector('.error-message-secondform').remove()
     );
 
     document.querySelector('.form__submit').disabled = false;  
+    document.querySelector('.form__submit').classList.remove('button_disabled_style')
   }
 }
 

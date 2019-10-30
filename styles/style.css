@@ -364,6 +364,7 @@ body {
 }
 
 .section__container--content .form__section {
+  display: flex;
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   user-select: none;
@@ -376,7 +377,6 @@ body {
 .section__container--content .form__section .form__section--container {
   display: flex;
   flex-direction: column;
-  height: 90%;
 }
 
 .section__container--content .form__section .form__section--container h1 {
@@ -458,8 +458,8 @@ body {
 
 .price_prefix {
   position: absolute;
-  margin-top: 10px;
-  margin-left: 6px;
+  margin-top: 30px;
+  margin-left: -93px;
 }
 
 .form_section_wrapper {
@@ -667,6 +667,13 @@ body {
   outline: none;
   align-self: flex-end;
   display: disabled;
+}
+
+.form__section 
+  .form__section--container
+  .form_element_button_disabled {
+    background: #e3dede !important;
+    color: #bab8b8;
 }
 
 .container__confirm--submit {
@@ -942,6 +949,16 @@ body {
   cursor: pointer;
   background-color: #3b3b3b;
   color: white;
+}
+
+.section3__container .section__form .button_disabled_style {
+  background: #e3dede;
+  color: #bab8b8;
+}
+
+.section3__container .section__form .error-message-secondform {
+  color: #e36262;
+  margin-bottom: 15px;
 }
 
 .section3__container img {
