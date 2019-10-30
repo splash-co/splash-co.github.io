@@ -140,7 +140,7 @@ const validateFullname = evt => {
 
     document.querySelector('.form__element--finish__button').disabled = false;
     document.querySelector('.form__element--finish__button')
-      .classList.add('form_element_button_disabled')
+      .classList.remove('form_element_button_disabled')
   }
 };
 
