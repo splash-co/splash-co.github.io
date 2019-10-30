@@ -231,8 +231,7 @@ const validateFullnameSuggestion = evt => {
       .insertAdjacentElement("afterend", p)    
 
     document.querySelector('.form__submit').disabled = true;
-    document.querySelector('.form__element--finish__button')
-      .classList.add('form_element_button_disabled')
+    document.querySelector('.form__submit').classList.add('button_disabled_style')
   } else {
     document
       .querySelector('.input--name--suggestion')
