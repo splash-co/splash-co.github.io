@@ -52,14 +52,16 @@ body {
   --description-h1-size: 30px;
   --description-h1-line-height: 45px;
   --description-h1-mb: 22px;
+  --finish-button-margin-b: 33px;
 
   /* FORM */
   --form-width: 571px;
-  --form-height: 545px;
+  --form-height: max-content;
   --form-padding: 68px 45px 0 40px;
   --form-margin: 0;
   --form-grid-columns: repeat(3, 1fr);
   --form-finish-btn-mt: 4%;
+  --form-finish-btn-mb: 10px;
   --dynamic-number-width: 40%;
 
   /* SECTION 1 */
@@ -112,6 +114,7 @@ body {
 @media screen and (max-width: 950px) {
   :root {
     /* HEADER */
+    --header-height: max-content;
     --content-display: block;
     --content-margin: 0 85px 0 59px;
     --description-width: 70%;
@@ -123,10 +126,11 @@ body {
 
     /* FORM */
     --form-margin: 80px auto 0 auto;
+    --form-finish-btn-mb: 10px;
 
     /* SECTION 1 */
     --section-1-justify: center;
-    --section-1-mt: 300px;
+    --section-1-mt: 100px;
     --section-1-h1-size: 35px;
     --section-1-h1-lh: 60px;
     --section-1-p-size: 23px;
@@ -202,10 +206,11 @@ body {
     --form-grid-columns: repeat(2, 50%);
     --form-padding: 68px 45px 40px 40px;
     --form-finish-btn-mt: 10%;
+    --form-finish-btn-mb: 10px;
     --dynamic-number-width: 25%;
 
     /* SECTION 1 */
-    --section-1-mt: 440px;
+    --section-1-mt: 180px;
     --section-1-left-width: 86%;
     --section-1-h1-size: 27px;
     --section-1-h1-lh: 38px;
@@ -310,8 +315,7 @@ body {
 .header__container {
   height: var(--header-height);
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../assets/background_header.png'), no-repeat;
+  background: url('../assets/background_header.png') no-repeat;
 }
 
 .header__container .navbar__container {
@@ -364,7 +368,6 @@ body {
 }
 
 .section__container--content .form__section {
-  display: flex;
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   user-select: none;
@@ -372,6 +375,7 @@ body {
   height: var(--form-height);
   padding: var(--form-padding);
   margin: var(--form-margin);
+  z-index: 1;
 }
 
 .section__container--content .form__section .form__section--container {
@@ -488,10 +492,6 @@ body {
   border-radius: 2px;
   font-weight: 600;
   color: #136299;
-}
-
-.deafult_label {
-  margin-bottom: 5px;
 }
 
 .dynamic_number_input {
@@ -667,6 +667,7 @@ body {
   outline: none;
   align-self: flex-end;
   display: disabled;
+  margin-bottom: var(--form-finish-btn-mb);
 }
 
 .form__section 
