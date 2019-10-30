@@ -364,7 +364,7 @@ const fetchSuggestion = () => {
     message: document.querySelector('textarea').value
   }
 
-  const modal = document.querySelector('.container__suggestion--submit');
+  const modal = document.querySelector('.container__confirm--submit');
   const modalText = document.querySelector('.container__suggestion--submit p');
 
   modalText.style.textAlign = 'center';
