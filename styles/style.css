@@ -234,6 +234,7 @@ body {
     /* FOOTER */
     --footer-children-width: 100%;
     --footer-about-pr: 0;
+    --footer-icon-container-margin: 10px 0;
   }
 
   .header__container .navbar__container .logo {
@@ -292,6 +293,29 @@ body {
   .section3__container .section__form h3 {
     text-align: center;
     padding: 0 22px;
+  }
+
+  .footer__container .about p {
+    text-align: center;
+  }
+
+  .footer__container .about .icons-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer__container .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__container .about .icons-container a:first-of-type {
+    margin-right: 15px;
+  }
+
+  .footer__container .about .icons-container a img {
+    margin-right: 0;
   }
 }
 
