@@ -62,6 +62,7 @@ body {
   --form-grid-columns: repeat(3, 1fr);
   --form-finish-btn-mt: 4%;
   --form-finish-btn-mb: 10px;
+  --form-finish-btn-width: 35%;
   --dynamic-number-width: 40%;
 
   /* SECTION 1 */
@@ -208,6 +209,7 @@ body {
     --form-finish-btn-mt: 10%;
     --form-finish-btn-mb: 10px;
     --dynamic-number-width: 25%;
+    --form-finish-btn-width: 100%;
 
     /* SECTION 1 */
     --section-1-mt: 180px;
@@ -654,7 +656,7 @@ body {
 
 .form__section .form__section--container .form__element--finish__button {
   cursor: pointer;
-  width: 35%;
+  width: var(--form-finish-btn-width);
   padding: 2%;
   background-color: #136299;
   margin-top: var(--form-finish-btn-mt);
@@ -670,11 +672,9 @@ body {
   margin-bottom: var(--form-finish-btn-mb);
 }
 
-.form__section 
-  .form__section--container
-  .form_element_button_disabled {
-    background: #e3dede !important;
-    color: #bab8b8;
+.form__section .form__section--container .form_element_button_disabled {
+  background: #e3dede !important;
+  color: #bab8b8;
 }
 
 .container__confirm--submit {
@@ -791,10 +791,10 @@ body {
 
 @keyframes spinHourly {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
