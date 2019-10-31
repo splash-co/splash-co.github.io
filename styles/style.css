@@ -220,6 +220,9 @@ body {
     --section-1-p-lh: 30px;
     --section-1-container-height: 23%;
 
+    /* SECTION 2 */
+    --section-2-square-margin: 50px 20px;
+
     /* SECTION 3 */
     --section-3-padding: 0 0 50px 0;
     --section-3-img-mt: 50px;
