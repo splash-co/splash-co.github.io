@@ -976,7 +976,7 @@ body {
   color: white;
 }
 
-.section3__container .section__form .button_disabled_style {
+.section3__container .section__form .form__submit:disabled {
   background: #e3dede;
   color: #bab8b8;
 }

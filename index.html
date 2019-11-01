@@ -207,26 +207,26 @@
         <label class="label__input--suggestion" for="input--name">
           NOME COMPLETO
         </label>
-        <input type="text" class="form__input--suggestion input--name input--name--suggestion"
-          onblur="validateFullnameSuggestion(event)" />
+        <input onkeypress="checkSecondForm()" type="text"
+          class="form__input--suggestion input--name input--name--suggestion" />
 
         <label class="label__input--suggestion" for="input--email">
           E-MAIL
         </label>
-        <input type="email" class="form__input--suggestion input--email input--email--suggestion"
-          onblur="validateEmailSuggestion(event)" />
+        <input onkeypress="checkSecondForm()" type="email"
+          class="form__input--suggestion input--email input--email--suggestion" />
 
         <label class="label__input--suggestion" for="input--telephone">
           TELEFONE
         </label>
-        <input type="tel" class="form__input--suggestion input--telephone input--telephone--suggestion"
-          onblur="validatePhoneSuggestion(event)" />
+        <input onkeypress="checkSecondForm()" type="tel"
+          class="form__input--suggestion input--telephone input--telephone--suggestion" />
 
         <label class="label__input--suggestion">
           MENSAGEM
         </label>
-        <textarea onblur="validateMessage(event)"></textarea>
-        <button type="submit" class="form__submit" onclick="fetchSuggestion()">
+        <textarea onkeypress="checkSecondForm()" class="input--message-suggestion"></textarea>
+        <button disabled type="submit" class="form__submit" onclick="fetchSuggestion()">
           ENVIAR
         </button>
       </section>
