@@ -270,3 +270,11 @@ const fetchSuggestion = () => {
     }
   });
 };
+
+const blockNextWeek = () => {
+  var nextWeekDate = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .split('T')[0];
+
+  document.querySelector('.input--date').setAttribute('min', nextWeekDate);
+};
