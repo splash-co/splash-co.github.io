@@ -81,12 +81,12 @@
               <label class="form__element--label label--date" for="input--date">
                 Escolha uma data
               </label>
-              <input type="date" class="form__element--input input--date" required />
+              <input type="date" onchange="checkFirstForm()" class="form__element--input input--date" required />
 
               <label class="form__element--label label--city" for="">
                 Escolha o local
               </label>
-              <select class="form__element--select select--city">
+              <select onchange="checkFirstForm()" class="form__element--select select--city">
                 <option>Selecione</option>
                 <option>Armação dos Búzios - RJ</option>
                 <option>Arraial do Cabo - RJ</option>
@@ -104,8 +104,8 @@
                 <button class="form__element--button" type="button" onclick="changePeopleQty(-1)">
                   -
                 </button>
-                <input class="form__element--input input--value input__value--quantityPeople" value="2" disabled
-                  required />
+                <input class="form__element--input input--value input__value--quantityPeople"
+                  onkeypress="checkFirstForm()" value="2" disabled required />
                 <button class="form__element--button" type="button" onclick="changePeopleQty(1)">
                   +
                 </button>
@@ -124,7 +124,8 @@
                 <label class="price_prefix">
                   R$
                 </label>
-                <input class="default_input price_input input--minPrice" min="0" type="number" required />
+                <input class="default_input price_input input--minPrice" onchange="checkFirstForm()" min="0"
+                  type="number" required />
               </div>
               <div class="form_section_wrapper">
                 <label class="deafult_label">
@@ -133,7 +134,8 @@
                 <label class="price_prefix">
                   R$
                 </label>
-                <input class="default_input price_input input--maxPrice" min="0" type="number" required />
+                <input class="default_input price_input input--maxPrice" onkeypress="checkFirstForm()" min="0"
+                  type="number" required />
               </div>
               <div class="form_section_wrapper">
                 <label class="deafult_label">
@@ -150,7 +152,7 @@
                 </div>
               </div>
             </div>
-            <button type="button" class="form__element--finish__button" onclick="fetchData()">
+            <button disabled type="button" class="form__element--finish__button" onclick="fetchData()">
               FAZER RESERVA
             </button>
           </div>

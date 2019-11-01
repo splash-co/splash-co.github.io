@@ -700,7 +700,9 @@ body {
   margin-bottom: var(--form-finish-btn-mb);
 }
 
-.form__section .form__section--container .form_element_button_disabled {
+.form__section
+  .form__section--container
+  .form__element--finish__button:disabled {
   background: #e3dede !important;
   color: #bab8b8;
 }

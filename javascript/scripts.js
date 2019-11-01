@@ -55,6 +55,8 @@ const changePeopleQty = num => {
       inputResult
     );
   }
+
+  checkFirstForm();
 };
 
 const changeDaysQty = num => {
@@ -67,6 +69,8 @@ const changeDaysQty = num => {
   } else {
     document.querySelector('.dynamic_number_input').value = String(inputResult);
   }
+
+  checkFirstForm();
 };
 
 const fetchData = () => {
@@ -123,10 +127,6 @@ const validateFullname = evt => {
     p.setAttribute('id', 'error-message-name');
 
     document.querySelector('.form__section--container').prepend(p);
-
-    document.querySelector('.form__element--finish__button').disabled = true;
-    document.querySelector('.form__element--finish__button')
-      .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--name')
@@ -137,11 +137,9 @@ const validateFullname = evt => {
       .forEach(el =>
         document.querySelector('.error-message').parentNode.removeChild(el)
       );
-
-    document.querySelector('.form__element--finish__button').disabled = false;
-    document.querySelector('.form__element--finish__button')
-      .classList.remove('form_element_button_disabled')
   }
+
+  checkFirstForm();
 };
 
 const validateEmail = evt => {
@@ -160,10 +158,6 @@ const validateEmail = evt => {
     p.setAttribute('id', 'error-message-email');
 
     document.querySelector('.form__section--container').prepend(p);
-
-    document.querySelector('.form__element--finish__button').disabled = true;
-    document.querySelector('.form__element--finish__button')
-      .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--email')
@@ -174,11 +168,9 @@ const validateEmail = evt => {
       .forEach(el =>
         document.querySelector('.error-message').parentNode.removeChild(el)
       );
-
-    document.querySelector('.form__element--finish__button').disabled = false;
-    document.querySelector('.form__element--finish__button')
-    .classList.remove('form_element_button_disabled')
   }
+
+  checkFirstForm();
 };
 
 const validatePhone = evt => {
@@ -193,10 +185,6 @@ const validatePhone = evt => {
     p.setAttribute('id', 'error-message-phone');
 
     document.querySelector('.form__section--container').prepend(p);
-
-    document.querySelector('.form__element--finish__button').disabled = true;
-    document.querySelector('.form__element--finish__button')
-    .classList.add('form_element_button_disabled')
   } else {
     document
       .querySelector('.input--telephone')
@@ -207,10 +195,34 @@ const validatePhone = evt => {
       .forEach(el =>
         document.querySelector('.error-message').parentNode.removeChild(el)
       );
+  }
 
+  checkFirstForm();
+};
+
+const checkFirstForm = () => {
+  const fullName = document.querySelector('.input--name').value,
+    email = document.querySelector('.input--email').value,
+    phone = document.querySelector('.input--telephone').value,
+    date = document.querySelector('.input--date').value,
+    city = document.querySelector('.select--city').value,
+    qtyPeople = document.querySelector('.input__value--quantityPeople').value,
+    minPrice = document.querySelector('.input--minPrice').value,
+    maxPrice = document.querySelector('.input--maxPrice').value,
+    qtydays = document.querySelector('.dynamic_number_input').value;
+
+  if (
+    fullName != '' &&
+    email != '' &&
+    phone != '' &&
+    date != '' &&
+    city != '' &&
+    qtyPeople != '' &&
+    minPrice != '' &&
+    maxPrice != '' &&
+    qtydays != ''
+  ) {
     document.querySelector('.form__element--finish__button').disabled = false;
-    document.querySelector('.form__element--finish__button')
-    .classList.remove('form_element_button_disabled')
   }
 };
 
@@ -228,10 +240,12 @@ const validateFullnameSuggestion = evt => {
 
     document
       .querySelector('.section__form h3')
-      .insertAdjacentElement("afterend", p)    
+      .insertAdjacentElement('afterend', p);
 
     document.querySelector('.form__submit').disabled = true;
-    document.querySelector('.form__submit').classList.add('button_disabled_style')
+    document
+      .querySelector('.form__submit')
+      .classList.add('button_disabled_style');
   } else {
     document
       .querySelector('.input--name--suggestion')
@@ -244,7 +258,9 @@ const validateFullnameSuggestion = evt => {
       );
 
     document.querySelector('.form__submit').disabled = false;
-    document.querySelector('.form__submit').classList.remove('button_disabled_style')
+    document
+      .querySelector('.form__submit')
+      .classList.remove('button_disabled_style');
   }
 };
 
@@ -265,10 +281,12 @@ const validateEmailSuggestion = evt => {
 
     document
       .querySelector('.section__form h3')
-      .insertAdjacentElement("afterend", p)    
+      .insertAdjacentElement('afterend', p);
 
     document.querySelector('.form__submit').disabled = true;
-    document.querySelector('.form__submit').classList.add('button_disabled_style')
+    document
+      .querySelector('.form__submit')
+      .classList.add('button_disabled_style');
   } else {
     document
       .querySelector('.input--email--suggestion')
@@ -280,8 +298,10 @@ const validateEmailSuggestion = evt => {
         document.querySelector('.error-message-secondform').remove()
       );
 
-      document.querySelector('.form__submit').disabled = false;
-      document.querySelector('.form__submit').classList.remove('button_disabled_style')
+    document.querySelector('.form__submit').disabled = false;
+    document
+      .querySelector('.form__submit')
+      .classList.remove('button_disabled_style');
   }
 };
 
@@ -298,10 +318,12 @@ const validatePhoneSuggestion = evt => {
 
     document
       .querySelector('.section__form h3')
-      .insertAdjacentElement("afterend", p)
+      .insertAdjacentElement('afterend', p);
 
     document.querySelector('.form__submit ').disabled = true;
-    document.querySelector('.form__submit').classList.add('button_disabled_style')
+    document
+      .querySelector('.form__submit')
+      .classList.add('button_disabled_style');
   } else {
     document
       .querySelector('.input--telephone--suggestion')
@@ -314,54 +336,56 @@ const validatePhoneSuggestion = evt => {
       );
 
     document.querySelector('.form__submit').disabled = false;
-    document.querySelector('.form__submit').classList.remove('button_disabled_style')
+    document
+      .querySelector('.form__submit')
+      .classList.remove('button_disabled_style');
   }
 };
 
 const validateMessage = evt => {
   if (evt.target.value.length < 6) {
-    document
-      .querySelector('textarea')
-      .classList.add()
+    document.querySelector('textarea').classList.add();
 
     var p = document.createElement('p');
     p.classList.add('error-message-secondform');
     p.innerHTML = 'A mensagem precisa ter no mínimo 6 caracteres.';
     p.setAttribute('id', 'error-message-phone');
-  
+
     document
       .querySelector('.section__form h3')
-      .insertAdjacentElement("afterend", p)
+      .insertAdjacentElement('afterend', p);
 
-      console.log(evt.target.value)
+    console.log(evt.target.value);
 
     document.querySelector('.form__submit').disabled = true;
-    document.querySelector('.form__submit').classList.add('button_disabled_style')
-  } else {
     document
-      .querySelector('textarea')
-      .classList.remove()
+      .querySelector('.form__submit')
+      .classList.add('button_disabled_style');
+  } else {
+    document.querySelector('textarea').classList.remove();
 
     document
       .querySelectorAll('#error-message-phone')
       .forEach(() =>
         document.querySelector('.error-message-secondform').remove()
-    );
+      );
 
-    document.querySelector('.form__submit').disabled = false;  
-    document.querySelector('.form__submit').classList.remove('button_disabled_style')
+    document.querySelector('.form__submit').disabled = false;
+    document
+      .querySelector('.form__submit')
+      .classList.remove('button_disabled_style');
   }
-}
+};
 
 const fetchSuggestion = () => {
-  const api = 'https://splashco.herokuapp.com/api/landing/submit-suggestion'
+  const api = 'https://splashco.herokuapp.com/api/landing/submit-suggestion';
 
   const propertyBody = {
     fullName: document.querySelector('.input--name--suggestion').value,
     email: document.querySelector('.input--email--suggestion').value,
     phone: $('.input--telephone--suggestion').cleanVal(),
     message: document.querySelector('textarea').value
-  }
+  };
 
   const modal = document.querySelector('.container__confirm--submit');
   const modalText = document.querySelector('.container__suggestion--submit p');
@@ -385,4 +409,4 @@ const fetchSuggestion = () => {
       document.querySelector('#failure').classList.toggle('none');
     }
   });
-}
+};
