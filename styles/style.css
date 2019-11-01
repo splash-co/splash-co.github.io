@@ -81,7 +81,6 @@ body {
   --section-2-justify: space-between;
   --section-2-square-width: 280px;
   --section-2-square-h1-size: 19px;
-  --section-2-square-p-size: 15px;
   --section-2-square-margin: 40px 0 0 0;
 
   /* SECTION 3 */
@@ -222,6 +221,7 @@ body {
 
     /* SECTION 2 */
     --section-2-square-margin: 50px 20px;
+    --section-2-square-h1-size: 22px;
 
     /* SECTION 3 */
     --section-3-padding: 0 0 50px 0;
@@ -891,12 +891,6 @@ body {
   font-size: var(--section-2-square-h1-size);
   color: #136299;
   font-weight: 800;
-}
-
-.section2__container .content__square__icon--card p {
-  font-size: var(--section-2-square-p-size);
-  margin-top: 15px;
-  line-height: 16px;
 }
 
 /* ----------------------------------------------------- */
