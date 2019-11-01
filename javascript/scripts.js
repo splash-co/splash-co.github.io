@@ -226,6 +226,17 @@ const checkFirstForm = () => {
   }
 };
 
+const checkSecondForm = () => {
+  const name = document.querySelector('.input--name--suggestion').value,
+    email = document.querySelector('.input--email--suggestion').value,
+    phone = document.querySelector('.input--telephone--suggestion').value,
+    message = document.querySelector('.input--message-suggestion').value;
+
+  if (name != '' && email != '' && phone != '' && message != '') {
+    document.querySelector('.form__submit').disabled = false;
+  }
+};
+
 // SECOND FORM
 const validateFullnameSuggestion = evt => {
   if (evt.target.value.length < 2 || !evt.target.value.match(/^[A-Za-z\s]+$/)) {
