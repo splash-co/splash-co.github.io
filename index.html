@@ -16,7 +16,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -33,6 +33,9 @@
 </head>
 
 <body onload="blockNextWeek()">
+  <script>
+    fbq('track', 'ViewContent');
+  </script>
   <script src="./javascript/jquery-3.4.1.min.js"></script>
   <script src="./plugins/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
 
