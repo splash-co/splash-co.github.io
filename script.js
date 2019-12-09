@@ -28,7 +28,7 @@ const validate = {
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )) {
       document.querySelector('.input--email')
-        .classList.add('form__element--error');
+        .classList.add('form__element--input--error');
 
         var p = document.createElement('p');
         p.classList.add('error-message');
@@ -240,7 +240,7 @@ document.querySelector('.input--telephone').addEventListener(
 );
 
 // Função que valida o input de name - SEGUNDO FORMULÁRIO
-document.querySelector('.input--name--suggestion').addEventListener('blur', () => validateSecondForm());
+document.querySelector('.input--name--suggestion').addEventListener(''blur', () => validateSecondForm());
 
 // Função que valida o input de email - SEGUNDO FORMULÁRIO
 document.querySelector('.input--email--suggestion').addEventListener('blur', () => validateSecondForm());
