@@ -240,7 +240,7 @@ document.querySelector('.input--telephone').addEventListener(
 );
 
 // Função que valida o input de name - SEGUNDO FORMULÁRIO
-document.querySelector('.input--name--suggestion').addEventListener('blur', () => validateSecondForm());
+document.querySelector('.input--name--suggestion').addEventListener(''blur', () => validateSecondForm());
 
 // Função que valida o input de email - SEGUNDO FORMULÁRIO
 document.querySelector('.input--email--suggestion').addEventListener('blur', () => validateSecondForm());
