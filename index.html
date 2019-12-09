@@ -8,9 +8,9 @@
   <meta name="description"
     content="Site para aluguel de lanchas em Arraial do Cabo, Armação dos Búzios, Cabo Frio, Capitólio, Furnas e Fama">
 
-
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="shortcut icon" href="./assets/favicon.ico" />
+
   <!-- Facebook Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -27,8 +27,11 @@
     fbq('init', '1258063607711703');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1258063607711703&ev=PageView&noscript=1" /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1258063607711703&ev=PageView&noscript=1" 
+    alt="Imagem do Facebook" />
+  </noscript>
   <!-- End Facebook Pixel Code -->
 
   <!-- Hotjar Tracking Code for https://splashco.com.br/ -->
@@ -68,17 +71,17 @@
   </div>
 
   <div onclick="refreshPage()" class="container__confirm--submit none" id="success">
-    <img src="./assets/black-checkmark.png" />
+    <img src="./assets/black-checkmark.png" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! O seu pedido já foi enviado!</p>
   </div>
 
   <div onclick="refreshPage()" class="container__suggestion--submit none" id="success">
-    <img src="./assets/black-checkmark.png" />
+    <img src="./assets/black-checkmark.png" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! A sua sugestão já foi enviada!</p>
   </div>
 
   <div onclick="refreshPage()" class="container__confirm--submit none" id="failure">
-    <img src="./assets/black-close.png" />
+    <img src="./assets/black-close.png" alt="Imagem de erro, alerta de erro!" />
     <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
   </div>
 
@@ -86,7 +89,7 @@
     <header class="header__container">
       <nav class="navbar__container">
         <a href="#" class="logo--image">
-          <img src="./assets/logo_branca.png" class="logo" alt="Logo Splash" />
+          <img src="./assets/logo_branca.png" class="logo" alt="Logo da Splash - Aluguel de Barcos" />
         </a>
 
         <section class="anchor__container">
@@ -157,7 +160,7 @@
                 <button class="form__element--button" type="button" onclick="changePeopleQty(1)">
                   +
                 </button>
-                <img src="./assets/vectors/vector_group.png" alt="Group Vector - People" />
+                <img src="./assets/vectors/vector_group.png" alt="Foto de um grupo de pessoas" />
               </div>
             </div>
 
@@ -222,25 +225,25 @@
         </p>
       </div>
       <div class="container__description__right--section">
-        <img src="./assets/vectors/vector_beach.png" alt="Vector - Beach" />
+        <img src="./assets/vectors/vector_beach.png" alt="Uma imagem e ícone de praia" />
       </div>
     </section>
 
     <section class="section2__container" id="section2__container">
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/mobile_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/mobile_icon-vector.png" alt="Uma imagem e ícone de celular" />
         <h1>VOCÊ ACESSA O PORTAL</h1>
       </div>
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/boat_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/boat_icon-vector.png" alt="Uma imagem e ícone de barco ou lancha" />
         <h1>ESCOLHE O LOCAL E O BARCO</h1>
       </div>
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/calendar_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/calendar_icon-vector.png" alt="Uma imagem e ícone de calendário" />
         <h1>MARCA O DIA E HORA</h1>
       </div>
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/tree_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/tree_icon-vector.png" alt="Uma imagem e ícone de uma praia" />
         <h1>APROVEITA SEU PASSEIO</h1>
       </div>
     </section>
@@ -278,19 +281,19 @@
           ENVIAR
         </button>
       </section>
-      <img src="./assets/vectors/yacht__icon-vector.png" alt="Boat / Yacht Vector" />
+      <img src="./assets/vectors/yacht__icon-vector.png" alt="Uma imagem de um barco grande" />
 
     </section>
 
     <footer class="footer__container">
       <div class="contact">
-        <img src="./assets/logo_branca.png" class="logo" alt="Logo - Splash" />
+        <img src="./assets/logo_branca.png" class="logo" alt="Logo da Splash - Aluguel de Lanchas" />
         <div class="info-icon-container">
-          <img src="./assets/vectors/phone-call.png" />
+          <img src="./assets/vectors/phone-call.png" alt="Uma imagem e Ícone de telefone" />
           <p>+55 (22) 98814-4983</p>
         </div>
         <div class="info-icon-container">
-          <img src="./assets/vectors/email.png" />
+          <img src="./assets/vectors/email.png" alt="Uma imagem e ícone de e-mail" />
           <p>contatosplashco@gmail.com</p>
         </div>
       </div>
@@ -299,8 +302,10 @@
         <p>Acreditamos que momentos espetaculares devem ser vividos e compartilhados por todos, bem como temos o
           propósito de tornar estes momento possíveis. Somos a Splash. </p>
         <div class="icons-container">
-          <a href=""><img src="./assets/vectors/facebook.png" alt=""></a>
-          <a href=""><img src="./assets/vectors/instagram.png" alt=""></a>
+          <a href="https://www.facebook.com/splashcoboats/" target="_blank">
+            <img src="./assets/vectors/facebook.png" alt="O ícone do Facebook">
+          </a>
+          <a href=""><img src="./assets/vectors/instagram.png" alt="O ícone do Instagram"></a>
         </div>
       </div>
     </footer>

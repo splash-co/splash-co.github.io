@@ -28,7 +28,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato';
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
 .content__container {
@@ -692,7 +692,7 @@ body {
   border: none;
   font-weight: bold;
   letter-spacing: 1.25px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
   outline: none;
   align-self: flex-end;
