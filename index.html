@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +7,9 @@
   <meta name="description"
     content="Site para aluguel de lanchas em Arraial do Cabo, Armação dos Búzios, Cabo Frio, Capitólio, Furnas e Fama">
 
-
-  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <link rel="shortcut icon" href="./assets/favicon.ico" />
+
   <!-- Facebook Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -27,8 +26,11 @@
     fbq('init', '1258063607711703');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1258063607711703&ev=PageView&noscript=1" /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1258063607711703&ev=PageView&noscript=1" 
+    alt="Imagem do Facebook" />
+  </noscript>
   <!-- End Facebook Pixel Code -->
 
   <!-- Hotjar Tracking Code for https://splashco.com.br/ -->
@@ -58,8 +60,6 @@
   <script>
     fbq('track', 'ViewContent');
   </script>
-  <script src="./javascript/jquery-3.4.1.min.js"></script>
-  <script src="./plugins/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
 
   <div class="container__confirm--submit none">
     <div class="external__circle">&nbsp;</div>
@@ -68,25 +68,25 @@
   </div>
 
   <div onclick="refreshPage()" class="container__confirm--submit none" id="success">
-    <img src="./assets/black-checkmark.png" />
+    <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! O seu pedido já foi enviado!</p>
   </div>
 
   <div onclick="refreshPage()" class="container__suggestion--submit none" id="success">
-    <img src="./assets/black-checkmark.png" />
+    <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! A sua sugestão já foi enviada!</p>
   </div>
 
   <div onclick="refreshPage()" class="container__confirm--submit none" id="failure">
-    <img src="./assets/black-close.png" />
+    <img src="./assets/black-close.svg" alt="Imagem de erro, alerta de erro!" />
     <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
   </div>
 
-  <div class="content__container">
-    <header class="header__container">
+  <div class="content__container" role="main">
+    <section class="header__container">
       <nav class="navbar__container">
         <a href="#" class="logo--image">
-          <img src="./assets/logo_branca.png" class="logo" alt="Logo Splash" />
+          <img src="./assets/logo_branca.png" class="logo" alt="Logo da Splash - Aluguel de Barcos" />
         </a>
 
         <section class="anchor__container">
@@ -98,149 +98,155 @@
 
       <section class="section__container--content">
         <div class="description__container">
-          <h1>SEU PRÓXIMO PASSEIO ESTÁ A UM CLIQUE</h1>
-          <p>
-            Encontre passeios de barco nas melhores praias do Brasil
-            e agende agora sua próxima experiência inesquecível
-          </p>
+          <article>
+            <h1>SEU PRÓXIMO PASSEIO ESTÁ A UM CLIQUE</h1>
+            <p>
+              Encontre passeios de barco nas melhores praias do Brasil
+              e agende agora sua próxima experiência inesquecível
+            </p>
+          </article>
         </div>
 
         <section class="form__section">
-          <div class="form__section--container">
-            <p class="error-message"></p>
-            <h1>AGENDE AGORA!</h1>
+          <!-- <form> -->
+            <div class="form__section--container">
+              <p class="error-message"></p>
+              <h1>AGENDE AGORA!</h1>
 
-            <label class="form__element--label label--name" for="input--name">
-              Seu nome completo
-            </label>
-            <input class="form__element--input input--name" onblur="validateFullname(event)" required />
-
-            <label class="form__element--label label--email" for="input--email">
-              Seu e-mail
-            </label>
-            <input class="form__element--input input--email" onblur="validateEmail(event)" type="email" required />
-
-            <label class="form__element--label" for="input--telephone">
-              Seu telefone
-            </label>
-            <input class="form__element--input input--telephone" onblur="validatePhone(event)" type="tel" required />
-
-            <div class="form__section__grid--inputs">
-              <label class="form__element--label label--date" for="input--date">
-                Escolha uma data
+              <label class="form__element--label label--name" for="input--name">
+                Seu nome completo
               </label>
-              <input type="date" onchange="checkFirstForm()" class="form__element--input input--date" required />
+              <input class="form__element--input input--name" required />
 
-              <label class="form__element--label label--city" for="">
-                Escolha o local
+              <label class="form__element--label label--email" for="input--email">
+                Seu e-mail
               </label>
-              <select onchange="checkFirstForm()" class="form__element--select select--city">
-                <option>Selecione</option>
-                <option>Armação dos Búzios - RJ</option>
-                <option>Arraial do Cabo - RJ</option>
-                <option>Cabo Frio - RJ</option>
-                <option>Capitólio - MG</option>
-                <option>Famas - MG</option>
-                <option>Furnas - MG</option>
-                <option>Guapé - MG</option>
-              </select>
+              <input class="form__element--input input--email"type="email" required />
 
-              <label class="form__element--label label--quantity__people">
-                Quantas pessoas?
+              <label class="form__element--label" for="input--telephone">
+                Seu telefone
               </label>
-              <div class="form__element--div div--button__script">
-                <button class="form__element--button" type="button" onclick="changePeopleQty(-1)">
-                  -
-                </button>
-                <input class="form__element--input input--value input__value--quantityPeople"
-                  onkeypress="checkFirstForm()" value="2" disabled required />
-                <button class="form__element--button" type="button" onclick="changePeopleQty(1)">
-                  +
-                </button>
-                <img src="./assets/vectors/vector_group.png" alt="Group Vector - People" />
-              </div>
-            </div>
+              <input class="form__element--input input--telephone" pattern="[0-9]{1,11}" type="tel" required />
 
+              <div class="form__section__grid--inputs">
+                <label class="form__element--label label--date" for="input--date">
+                  Escolha uma data
+                </label>
+                <input type="date" class="form__element--input input--date" required />
 
+                <label class="form__element--label label--city" for="select--city">
+                  Escolha o local
+                </label>
+                <select class="form__element--select select--city">
+                  <option>Selecione</option>
+                  <option>Armação dos Búzios - RJ</option>
+                  <option>Arraial do Cabo - RJ</option>
+                  <option>Cabo Frio - RJ</option>
+                  <option>Capitólio - MG</option>
+                  <option>Famas - MG</option>
+                  <option>Furnas - MG</option>
+                  <option>Guapé - MG</option>
+                </select>
 
-
-            <div class="form__section__div--inputs">
-              <div class="form_section_wrapper">
-                <label class="default_label">
-                  Preço mínimo
+                <label class="form__element--label label--quantity__people">
+                  Quantas pessoas?
                 </label>
-                <label class="price_prefix">
-                  R$
-                </label>
-                <input class="default_input price_input input--minPrice" onchange="checkFirstForm()" min="0"
-                  type="number" required />
-              </div>
-              <div class="form_section_wrapper">
-                <label class="deafult_label">
-                  Preço máximo
-                </label>
-                <label class="price_prefix">
-                  R$
-                </label>
-                <input class="default_input price_input input--maxPrice" onkeypress="checkFirstForm()" min="0"
-                  type="number" required />
-              </div>
-              <div class="form_section_wrapper">
-                <label class="deafult_label">
-                  Quantidade de dias
-                </label>
-                <div class="margin_wrapper">
-                  <button class="change_number_button" type="button" onclick="changeDaysQty(-1)">
+                <div class="form__element--div div--button__script">
+                  <button class="form__element--button" type="button" onclick="changePeopleQty(-1)">
                     -
                   </button>
-                  <input class="dynamic_number_input" value="1" disabled required />
-                  <button class="change_number_button" type="button" onclick="changeDaysQty(1)">
+                  <input class="form__element--input input--value input__value--quantityPeople"
+                    onkeypress="checkFirstForm()" value="2" disabled required />
+                  <button class="form__element--button" type="button" onclick="changePeopleQty(1)">
                     +
                   </button>
+                  <img src="./assets/vectors/vector_group.png" alt="Foto de um grupo de pessoas" />
                 </div>
               </div>
+
+              <div class="form__section__div--inputs">
+                <div class="form_section_wrapper">
+                  <label class="default_label">
+                    Preço mínimo
+                  </label>
+                  <label class="price_prefix">
+                    R$
+                  </label>
+                  <input class="default_input price_input input--minPrice" onchange="validateFirstForm()" min="0"
+                    type="number" required />
+                </div>
+
+                <div class="form_section_wrapper">
+                  <label class="deafult_label">
+                    Preço máximo
+                  </label>
+                  <label class="price_prefix">
+                    R$
+                  </label>
+                  <input class="default_input price_input input--maxPrice" onkeypress="validateFirstForm()" min="0"
+                    type="number" required />
+                </div>
+
+                <div class="form_section_wrapper">
+                  <label class="deafult_label">
+                    Quantidade de dias
+                  </label>
+                  <div class="margin_wrapper">
+                    <button class="change_number_button" type="button" onclick="changeDayQuantity(-1)">
+                      -
+                    </button>
+                    <input class="dynamic_number_input" value="1" disabled required />
+                    <button class="change_number_button" type="button" onclick="changeDayQuantity(1)">
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <button disabled type="button" class="form__element--finish__button">
+                FAZER RESERVA
+              </button>
             </div>
-            <button disabled type="button" class="form__element--finish__button" onclick="fetchData()">
-              FAZER RESERVA
-            </button>
-          </div>
+          </form>
         </section>
       </section>
-    </header>
+    </section>
 
     <section class="section1__container" id="section1__container">
       <div class="container__description__left--section">
-        <h1>TODA A FACILIDADE QUE VOCÊ PRECISA PARA RELAXAR</h1><br>
-        <p>
-          A SPLASH preza pelo seu conforto e bem-estar e te ajuda a tirar
-          o maior proveito das suas férias e passeios.
-        </p>
-        <br />
-        <p>
-          Encontre passeios de barco nas melhores praias do Rio de Janeiro
-          e agende agora sua próxima experiência inesquecível.
-        </p>
+        <article>
+          <h1>TODA A FACILIDADE QUE VOCÊ PRECISA PARA RELAXAR</h1><br>
+          <p>
+            A SPLASH preza pelo seu conforto e bem-estar e te ajuda a tirar
+            o maior proveito das suas férias e passeios.
+          </p>
+          <br />
+          <p>
+            Encontre passeios de barco nas melhores praias do Rio de Janeiro
+            e agende agora sua próxima experiência inesquecível.
+          </p>
+        </article> 
       </div>
       <div class="container__description__right--section">
-        <img src="./assets/vectors/vector_beach.png" alt="Vector - Beach" />
+        <img src="./assets/vectors/vector_beach.png" alt="Uma imagem e ícone de praia" />
       </div>
     </section>
 
     <section class="section2__container" id="section2__container">
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/mobile_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/mobile_icon-vector.png" alt="Uma imagem e ícone de celular" />
         <h1>VOCÊ ACESSA O PORTAL</h1>
       </div>
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/boat_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/boat_icon-vector.png" alt="Uma imagem e ícone de barco ou lancha" />
         <h1>ESCOLHE O LOCAL E O BARCO</h1>
       </div>
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/calendar_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/calendar_icon-vector.png" alt="Uma imagem e ícone de calendário" />
         <h1>MARCA O DIA E HORA</h1>
       </div>
       <div class="content__square__icon--card">
-        <img src="./assets/vectors/tree_icon-vector.png" src="Calendar Icon Vector" />
+        <img src="./assets/vectors/tree_icon-vector.png" alt="Uma imagem e ícone de uma praia" />
         <h1>APROVEITA SEU PASSEIO</h1>
       </div>
     </section>
@@ -252,45 +258,45 @@
           EM CASO DE DÚVIDA, SUGESTÕES OU RECLAMAÇÕES ENTRE EM CONTATO CONOSCO!
         </h3>
 
-        <label class="label__input--suggestion" for="input--name">
+        <label class="label__input--suggestion" for="input--name--suggestion">
           NOME COMPLETO
         </label>
-        <input onkeypress="checkSecondForm()" type="text"
+        <input type="text"
           class="form__input--suggestion input--name input--name--suggestion" />
 
-        <label class="label__input--suggestion" for="input--email">
+        <label class="label__input--suggestion" for="input--email" for="input--email--suggestion"">
           E-MAIL
         </label>
-        <input onkeypress="checkSecondForm()" type="email"
+        <input type="email"
           class="form__input--suggestion input--email input--email--suggestion" />
 
         <label class="label__input--suggestion" for="input--telephone">
           TELEFONE
         </label>
-        <input onkeypress="checkSecondForm()" type="tel"
+        <input type="tel"
           class="form__input--suggestion input--telephone input--telephone--suggestion" />
 
         <label class="label__input--suggestion">
           MENSAGEM
         </label>
-        <textarea onkeypress="checkSecondForm()" class="input--message-suggestion"></textarea>
-        <button disabled type="submit" class="form__submit" onclick="fetchSuggestion()">
+        <textarea class="input--message-suggestion"></textarea>
+        <button disabled type="submit" class="form__submit">
           ENVIAR
         </button>
       </section>
-      <img src="./assets/vectors/yacht__icon-vector.png" alt="Boat / Yacht Vector" />
+      <img src="./assets/vectors/yacht__icon-vector.png" alt="Uma imagem de um barco grande" />
 
     </section>
 
-    <footer class="footer__container">
+    <section class="footer__container">
       <div class="contact">
-        <img src="./assets/logo_branca.png" class="logo" alt="Logo - Splash" />
+        <img src="./assets/logo_branca.png" class="logo" alt="Logo da Splash - Aluguel de Lanchas" />
         <div class="info-icon-container">
-          <img src="./assets/vectors/phone-call.png" />
+          <img src="./assets/vectors/phone-call.png" alt="Uma imagem e Ícone de telefone" />
           <p>+55 (22) 98814-4983</p>
         </div>
         <div class="info-icon-container">
-          <img src="./assets/vectors/email.png" />
+          <img src="./assets/vectors/email.png" alt="Uma imagem e ícone de e-mail" />
           <p>contatosplashco@gmail.com</p>
         </div>
       </div>
@@ -299,13 +305,18 @@
         <p>Acreditamos que momentos espetaculares devem ser vividos e compartilhados por todos, bem como temos o
           propósito de tornar estes momento possíveis. Somos a Splash. </p>
         <div class="icons-container">
-          <a href=""><img src="./assets/vectors/facebook.png" alt=""></a>
-          <a href=""><img src="./assets/vectors/instagram.png" alt=""></a>
+          <a href="https://www.facebook.com/splashcoboats/" target="_blank" rel="canonical external nofollow">
+            <img src="./assets/vectors/facebook.png" alt="O ícone do Facebook" />
+          </a>
+          <a href="" rel="canonical external nofollow">
+            <img src="./assets/vectors/instagram.png" alt="O ícone do Instagram">
+          </a>
         </div>
       </div>
-    </footer>
+    </section>
   </div>
-  <script src="./javascript/scripts.js"></script>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
