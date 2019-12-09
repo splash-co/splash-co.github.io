@@ -345,7 +345,8 @@ body {
 .header__container {
   height: var(--header-height);
   width: 100%;
-  background: url('../assets/background_header.png') no-repeat;
+  background: url('./assets/background_header.jpeg') no-repeat;
+  background-size: cover;
 }
 
 .header__container .navbar__container {

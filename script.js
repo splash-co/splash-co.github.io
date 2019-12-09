@@ -141,7 +141,7 @@ function blockNextWeek() {
 
 // Função que elabora o fetch POST do formulário principal
 document.querySelector('.form__element--finish__button').addEventListener('click', async () => {
-  const api = 'https://splashco.herokuapp.com/api/landing/submit';
+  const api = 'https://splashco.herokuapp.com/api/landing/submitt';
 
   const bodyProperty = {
     fullName: document.querySelector('.input--name').value,

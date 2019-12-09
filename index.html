@@ -68,17 +68,17 @@
   </div>
 
   <div onclick="refreshPage()" class="container__confirm--submit none" id="success">
-    <img src="./assets/black-checkmark.png" alt="Imagem de check, alerta de sucesso!" />
+    <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! O seu pedido já foi enviado!</p>
   </div>
 
   <div onclick="refreshPage()" class="container__suggestion--submit none" id="success">
-    <img src="./assets/black-checkmark.png" alt="Imagem de check, alerta de sucesso!" />
+    <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! A sua sugestão já foi enviada!</p>
   </div>
 
   <div onclick="refreshPage()" class="container__confirm--submit none" id="failure">
-    <img src="./assets/black-close.png" alt="Imagem de erro, alerta de erro!" />
+    <img src="./assets/black-close.svg" alt="Imagem de erro, alerta de erro!" />
     <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
   </div>
 
@@ -132,12 +132,12 @@
                 <label class="form__element--label label--date" for="input--date">
                   Escolha uma data
                 </label>
-                <input type="date" onchange="checkFirstForm()" class="form__element--input input--date" required />
+                <input type="date" class="form__element--input input--date" required />
 
                 <label class="form__element--label label--city" for="select--city">
                   Escolha o local
                 </label>
-                <select onchange="checkFirstForm()" class="form__element--select select--city">
+                <select class="form__element--select select--city">
                   <option>Selecione</option>
                   <option>Armação dos Búzios - RJ</option>
                   <option>Arraial do Cabo - RJ</option>
@@ -203,7 +203,7 @@
                 </div>
               </div>
 
-              <button type="button" class="form__element--finish__button">
+              <button disabled type="button" class="form__element--finish__button">
                 FAZER RESERVA
               </button>
             </div>
@@ -261,25 +261,25 @@
         <label class="label__input--suggestion" for="input--name--suggestion">
           NOME COMPLETO
         </label>
-        <input onkeypress="validateSecondForm()" type="text"
+        <input type="text"
           class="form__input--suggestion input--name input--name--suggestion" />
 
         <label class="label__input--suggestion" for="input--email" for="input--email--suggestion"">
           E-MAIL
         </label>
-        <input onkeypress="validateSecondForm()" type="email"
+        <input type="email"
           class="form__input--suggestion input--email input--email--suggestion" />
 
         <label class="label__input--suggestion" for="input--telephone">
           TELEFONE
         </label>
-        <input onkeypress="validateSecondForm()" type="tel"
+        <input type="tel"
           class="form__input--suggestion input--telephone input--telephone--suggestion" />
 
         <label class="label__input--suggestion">
           MENSAGEM
         </label>
-        <textarea onkeypress="validateSecondForm()" class="input--message-suggestion"></textarea>
+        <textarea class="input--message-suggestion"></textarea>
         <button disabled type="submit" class="form__submit">
           ENVIAR
         </button>
