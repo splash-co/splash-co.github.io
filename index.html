@@ -55,22 +55,17 @@
     <p>Aguarde um instante...</p>
   </div>
 
-  <div class="container__confirm--submit none" id="success">
+  <section class="container__confirm--submit none" id="success">
     <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! O seu pedido já foi enviado!</p>
-  </div>
+  </section>
 
-  <div class="container__suggestion--submit none" id="success">
-    <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
-    <p>Sucesso! A sua sugestão já foi enviada!</p>
-  </div>
-
-  <div class="container__confirm--submit none" id="failure">
+  <section class="container__confirm--submit none" id="failure">
     <img src="./assets/black-close.svg" alt="Imagem de erro, alerta de erro!" />
     <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
-  </div>
+  </section>
 
-  <div class="content__container" role="main">
+  <section class="content__container" role="main">
     <section class="header__container">
       <nav class="navbar__container">
         <a href="#" class="logo--image">
@@ -104,7 +99,7 @@
               <label class="form__element--label label--name" for="input--name">
                 Seu nome completo
               </label>
-              <input class="form__element--input input--name" required />
+              <input class="form__element--input input--name" id="input--name" required />
 
               <label class="form__element--label label--email" for="input--email">
                 Seu e-mail
@@ -304,7 +299,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </section>
 
   <script src="./script.min.js"></script>
 </body>
