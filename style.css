@@ -4,12 +4,22 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/Lato/Lato-Regular.ttf');
+  src: 
+    local('Lato Regular'), 
+    local('Lato-Regular'),
+    local('Lato'),
+    url('./fonts/Roboto/');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../fonts/Roboto/Roboto-Regular.ttf');
+  src:
+    local('Roboto Regular'),
+    local('Roboto-Regular'), 
+    local('Roboto'),
+    url('../fonts/Roboto/');
+  font-display: swap;
 }
 
 /* ----------------------------------------------------- */
