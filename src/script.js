@@ -121,12 +121,14 @@ document.getElementsByClassName('form__element--button')[0].addEventListener('cl
   let inputValue = document.querySelector('.input__value--quantityPeople');
   const inputResult = Number(inputValue.value) - 1;
   inputResult < 2 ? inputValue.value = 2 : inputValue.value = String(inputResult);
+  validateFirstForm();
 })
 
 document.getElementsByClassName('form__element--button')[1].addEventListener('click', () => {
   let inputValue = document.querySelector('.input__value--quantityPeople');
   const inputResult = Number(inputValue.value) + 1;
   inputValue.value = String(inputResult);
+  validateFirstForm();
 })
 
 /* 
@@ -138,12 +140,14 @@ document.getElementsByClassName('change_number_button')[0].addEventListener('cli
   let inputValue = document.querySelector('.dynamic_number_input');
   const inputResult = Number(inputValue.value) - 1;
   inputResult < 1 ? inputValue.value = 1 : inputValue.value = String(inputResult);
+  validateFirstForm();
 })
 
 document.getElementsByClassName('change_number_button')[1].addEventListener('click', () => {
   let inputValue = document.querySelector('.dynamic_number_input');
   const inputResult = Number(inputValue.value) + 1;
   inputValue.value = String(inputResult);
+  validateFirstForm();
 })
 
 
@@ -264,6 +268,15 @@ document.querySelector('.input--telephone').addEventListener(
     validateFirstForm();
   }
 );
+
+// Função que valida o formulário - FORMULÁRIO PRINCIPAL
+document.querySelector('.select--city').addEventListener('blur', () => validateFirstForm()); // <select> tag
+
+document.querySelector('.input--minPrice').addEventListener('keypress', () => validateFirstForm()); // min-Price input tag
+document.querySelector('.input--minPrice').addEventListener('blur', () => validateFirstForm()) // min-Price input tag
+
+document.querySelector('.input--maxPrice').addEventListener('keypress', () => validateFirstForm()); // max-Price input tag
+document.querySelector('.input--maxPrice').addEventListener('blur', () => validateFirstForm()); // max-Price input tag
 
 // Função que valida o input de name - SEGUNDO FORMULÁRIO
 document.querySelector('.input--name--suggestion').addEventListener('blur', () => validateSecondForm());

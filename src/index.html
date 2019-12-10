@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash | Aluguel de lanchas online</title>
+  <meta 
+    name="description"
+    content="Site para aluguel de lanchas em Arraial do Cabo, Armação dos Búzios, Cabo Frio, Capitólio, Furnas e Fama"
+  >
+
+  <link rel="stylesheet" href="./style.min.css" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" />
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1258063607711703');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1258063607711703&ev=PageView&noscript=1" 
+    alt="Imagem do Facebook" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154123582-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-154123582-3');
+  </script>
+</head>
+
+<body>
+  <script>
+    fbq('track', 'ViewContent');
+  </script>
+
+  <section class="container__confirm--submit none" role="modal:alert">
+    <div class="external__circle">&nbsp;</div>
+    <div class="internal__circle">&nbsp;</div>
+    <p>Aguarde um instante...</p>
+  </section>
+
+  <section class="container__confirm--submit none" id="success" role="modal:success">
+    <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
+    <p>Sucesso! O seu pedido já foi enviado!</p>
+  </section>
+
+  <section class="container__confirm--submit none" id="failure" role="modal:failure">
+    <img src="./assets/black-close.svg" alt="Imagem de erro, alerta de erro!" />
+    <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
+  </section>
+
+  <section class="content__container" role="main">
+    <section class="header__container">
+      <nav class="navbar__container">
+        <a href="#" class="logo--image">
+          <img 
+            src="./assets/logo_branca.png" 
+            class="logo" 
+            alt="Logo da Splash - Aluguel de Barcos" 
+          />
+        </a>
+
+        <section class="anchor__container">
+          <a href="#section1__container">SOBRE NÓS</a>
+          <a href="#section2__container">COMO FUNCIONA</a>
+          <a href="#section3__container">CONTATO</a>
+        </section>
+      </nav>
+
+      <section class="section__container--content">
+        <div class="description__container">
+          <article>
+            <h1>SEU PRÓXIMO PASSEIO ESTÁ A UM CLIQUE</h1>
+            <p>
+              Encontre passeios de barco nas melhores praias do Brasil
+              e agende agora sua próxima experiência inesquecível
+            </p>
+          </article>
+        </div>
+
+        <section class="form__section">
+          <form>
+            <div class="form__section--container">
+              <p class="error-message"></p>
+              <h1>AGENDE AGORA!</h1>
+
+              <label 
+                class="form__element--label label--name" 
+                for="input--name"
+              >
+                Seu nome completo
+              </label>
+              <input 
+                class="form__element--input input--name" 
+                id="input--name" 
+                required 
+              />
+
+              <label class="form__element--label label--email" for="input--email">
+                Seu e-mail
+              </label>
+              <input 
+                class="form__element--input input--email"
+                id="input--email"
+                type="email" 
+                required 
+              />
+
+              <label class="form__element--label" for="input--telephone">
+                Seu telefone
+              </label>
+              <input 
+                id="input--telephone"
+                class="form__element--input input--telephone"
+                pattern="[0-9]{1,11}" type="tel"
+                required 
+              />
+
+              <div class="form__section__grid--inputs">
+                <label class="form__element--label label--date" for="input--date">
+                  Escolha uma data
+                </label>
+                <input 
+                  id="input--date"
+                  class="form__element--input input--date"
+                  type="date"  
+                  required 
+                />
+
+                <label 
+                  class="form__element--label label--city" 
+                  for="select--city"
+                >
+                  Escolha o local
+                </label>
+                <select 
+                  id="select--city"
+                  class="form__element--select select--city"
+                >
+                  <option></option>
+                  <option>Armação dos Búzios - RJ</option>
+                  <option>Arraial do Cabo - RJ</option>
+                  <option>Cabo Frio - RJ</option>
+                  <option>Capitólio - MG</option>
+                  <option>Famas - MG</option>
+                  <option>Furnas - MG</option>
+                  <option>Guapé - MG</option>
+                </select>
+
+                <label 
+                  class="form__element--label label--quantity__people"
+                  for="input__value--quantityPeople"
+                >
+                  Quantas pessoas?
+                </label>
+                <div class="form__element--div div--button__script">
+                  <button class="form__element--button" type="button">
+                    -
+                  </button>
+                  <input
+                    id="input__value--quantityPeople" 
+                    class="form__element--input input--value input__value--quantityPeople"
+                    value="2" 
+                    disabled 
+                    required 
+                  />
+                  <button class="form__element--button" type="button">
+                    +
+                  </button>
+                  <img src="./assets/vectors/vector_group.png" alt="Foto de um grupo de pessoas" />
+                </div>
+              </div>
+
+              <div class="form__section__div--inputs">
+                <div class="form_section_wrapper">
+                  <label class="default_label" for="input--minPrice">
+                    Preço mínimo
+                  </label>
+                  <label class="price_prefix">
+                    R$
+                  </label>
+                  <input 
+                    id="input--minPrice"
+                    class="default_input price_input input--minPrice" 
+                    min="0"
+                    type="number" 
+                    required 
+                  />
+                </div>
+
+                <div class="form_section_wrapper">
+                  <label class="deafult_label" for="input--maxPrice">
+                    Preço máximo
+                  </label>
+                  <label class="price_prefix">
+                    R$
+                  </label>
+                  <input 
+                    id="input--maxPrice"
+                    class="default_input price_input input--maxPrice"
+                    min="0"
+                    type="number"
+                    required
+                  />
+                </div>
+
+                <div class="form_section_wrapper">
+                  <label class="deafult_label" for="input--quantityDays">
+                    Quantidade de dias
+                  </label>
+                  <div class="margin_wrapper">
+                    <button class="change_number_button" type="button">
+                      -
+                    </button>
+                    <input 
+                      id="input--quantityDays"
+                      class="dynamic_number_input" 
+                      value="1" 
+                      disabled 
+                      required 
+                    />
+                    <button class="change_number_button" type="button">
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <button disabled type="button" class="form__element--finish__button">
+                FAZER RESERVA
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </section>
+
+    <section class="section1__container" id="section1__container">
+      <div class="container__description__left--section">
+        <article>
+          <h1>TODA A FACILIDADE QUE VOCÊ PRECISA PARA RELAXAR</h1><br>
+          <p>
+            A SPLASH preza pelo seu conforto e bem-estar e te ajuda a tirar
+            o maior proveito das suas férias e passeios.
+          </p>
+          <br />
+          <p>
+            Encontre passeios de barco nas melhores praias do Rio de Janeiro
+            e agende agora sua próxima experiência inesquecível.
+          </p>
+        </article> 
+      </div>
+      <div class="container__description__right--section">
+        <img src="./assets/vectors/vector_beach.png" alt="Uma imagem e ícone de praia" />
+      </div>
+    </section>
+
+    <section class="section2__container" id="section2__container">
+      <div class="content__square__icon--card">
+        <img src="./assets/vectors/mobile_icon-vector.png" alt="Uma imagem e ícone de celular" />
+        <h1>VOCÊ ACESSA O PORTAL</h1>
+      </div>
+      <div class="content__square__icon--card">
+        <img src="./assets/vectors/boat_icon-vector.png" alt="Uma imagem e ícone de barco ou lancha" />
+        <h1>ESCOLHE O LOCAL E O BARCO</h1>
+      </div>
+      <div class="content__square__icon--card">
+        <img src="./assets/vectors/calendar_icon-vector.png" alt="Uma imagem e ícone de calendário" />
+        <h1>MARCA O DIA E HORA</h1>
+      </div>
+      <div class="content__square__icon--card">
+        <img src="./assets/vectors/tree_icon-vector.png" alt="Uma imagem e ícone de uma praia" />
+        <h1>APROVEITA SEU PASSEIO</h1>
+      </div>
+    </section>
+
+    <section class="section3__container" id="section3__container">
+      <section class="section__form">
+        <h1>FALE CONOSCO!</h1>
+        <h3>
+          EM CASO DE DÚVIDA, SUGESTÕES OU RECLAMAÇÕES ENTRE EM CONTATO CONOSCO!
+        </h3>
+
+        <label class="label__input--suggestion" for="input--name--suggestion">
+          NOME COMPLETO
+        </label>
+        <input 
+          id="input--name--suggestion"
+          class="form__input--suggestion input--name input--name--suggestion" 
+          type="text"
+        />
+
+        <label 
+          class="label__input--suggestion" 
+          for="input--email--suggestion""
+        >
+          E-MAIL
+        </label>
+        <input 
+          type="email"
+          class="form__input--suggestion input--email input--email--suggestion"
+          id="input--email--suggestion"
+        />
+
+        <label class="label__input--suggestion" for="input--telephone--suggestion">
+          TELEFONE
+        </label>
+        <input 
+          id="input--telephone--suggestion"
+          class="form__input--suggestion input--telephone input--telephone--suggestion" 
+          type="tel"
+        />
+
+        <label class="label__input--suggestion" for="input--message--suggestion">
+          MENSAGEM
+        </label>
+        <textarea 
+          id="input--message--suggestion"
+          class="input--message-suggestion"
+        >
+        </textarea>
+        <button disabled type="submit" class="form__submit">
+          ENVIAR
+        </button>
+      </section>
+      <img src="./assets/vectors/yacht__icon-vector.png" alt="Uma imagem de um barco grande" />
+    </section>
+
+    <section class="footer__container">
+      <div class="contact">
+        <img 
+          src="./assets/logo_branca.png" 
+          class="logo" 
+          alt="Logo da Splash - Aluguel de Lanchas" 
+          draggable="false"
+        />
+        <div class="info-icon-container">
+          <img 
+            src="./assets/vectors/phone-call.png" 
+            alt="Uma imagem e Ícone de telefone" 
+          />
+          <p aria-label="Entre em contato via telefone conosco">
+            +55 (22) 98814-4983
+          </p>
+        </div>
+        <div class="info-icon-container">
+          <img src="./assets/vectors/email.png" alt="Uma imagem e ícone de e-mail" />
+          <p>contatosplashco@gmail.com</p>
+        </div>
+      </div>
+      <div aria-label="Sobre a Splash" class="about">
+        <p aria-label="Título da Seção">Quem somos</p>
+        <p>
+          Acreditamos que momentos espetaculares devem ser vividos e 
+          compartilhados por todos, bem como temos o
+          propósito de tornar estes momento possíveis. Somos a Splash. 
+        </p>
+        <div class="icons-container">
+          <a 
+            href="https://www.facebook.com/splashcoboats/" 
+            target="_blank" 
+            rel="canonical external nofollow"
+            role="presentation"
+            aria-label="Acesse o Facebook da Splash e fique por dentro das novidades"
+          >
+            <img src="./assets/vectors/facebook.png" alt="O ícone do Facebook"/>
+          </a>
+          <a 
+            href="https://www.instagram.com/oficialsplash/"
+            target="_blank"
+            rel="canonical external nofollow" 
+            role="presentation" 
+            aria-label="Acesse o Instagram da Splash e fique por dentro das novidades"
+          >
+            <img src="./assets/vectors/instagram.png" alt="O ícone do Instagram">
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <script src="./script.min.js"></script>
+</body>
+</html>
