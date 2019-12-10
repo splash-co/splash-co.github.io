@@ -80,68 +80,94 @@ const validate = {
 }
 
 // Função de validação do primeiro formulário
-function validateFirstForm() {
-  validate.isNotEmptyForm([
-    document.querySelector('.input--name').value,
-    document.querySelector('.input--email').value,
-    document.querySelector('.input--telephone').value,
-    document.querySelector('.input--date').value,
-    document.querySelector('.select--city').value,
-    document.querySelector('.input__value--quantityPeople').value,
-    document.querySelector('.input--minPrice').value,
-    document.querySelector('.input--maxPrice').value,
-    document.querySelector('.dynamic_number_input').value
-  ], (bool) => {
-    if (bool.indexOf(true) >= 0) {
-      document.querySelector('.form__element--finish__button').disabled = true;
-    } else {
-      document.querySelector('.form__element--finish__button').disabled = false;
-    }
-  })
-};
+const validateFirstForm = () => validate.isNotEmptyForm([
+  document.querySelector('.input--name').value,
+  document.querySelector('.input--email').value,
+  document.querySelector('.input--telephone').value,
+  document.querySelector('.input--date').value,
+  document.querySelector('.select--city').value,
+  document.querySelector('.input__value--quantityPeople').value,
+  document.querySelector('.input--minPrice').value,
+  document.querySelector('.input--maxPrice').value,
+  document.querySelector('.dynamic_number_input').value
+], (bool) => {
+  if (bool.indexOf(true) >= 0) {
+    return document.querySelector('.form__element--finish__button').disabled = true;
+  } else {
+    return document.querySelector('.form__element--finish__button').disabled = false;
+  }
+});
 
 // Função de validação do segundo formulário (formulário de sugestão)
-function validateSecondForm() {
-  validate.isNotEmptyForm([
-    document.querySelector('.input--name--suggestion').value,
-    document.querySelector('.input--email--suggestion').value,
-    document.querySelector('.input--telephone--suggestion').value,
-    document.querySelector('.input--message-suggestion').value
-  ], (bool) => {
-    if (bool.indexOf(true) >= 0) {
-      document.querySelector('.form__submit').disabled = true;
-    } else {
-      document.querySelector('.form__submit').disabled = false;
-    }
-  })
-};
+const validateSecondForm = () => validate.isNotEmptyForm([
+  document.querySelector('.input--name--suggestion').value,
+  document.querySelector('.input--email--suggestion').value,
+  document.querySelector('.input--telephone--suggestion').value,
+  document.querySelector('.input--message-suggestion').value
+], (bool) => {
+  if (bool.indexOf(true) >= 0) {
+    document.querySelector('.form__submit').disabled = true;
+  } else {
+    document.querySelector('.form__submit').disabled = false;
+  }
+});
 
-// Altera o valor do input de pessoas
-function changePeopleQuantity(num) {
+/* 
+  ------------------------------------------------------------------------------
+  Altera o valor do input de pessoas (Button [-] e Button [+]) 
+  ------------------------------------------------------------------------------
+*/
+document.getElementsByClassName('form__element--button')[0].addEventListener('click', () => {
   let inputValue = document.querySelector('.input__value--quantityPeople');
-  const inputResult = Number(inputValue.value) + num;
+  const inputResult = Number(inputValue.value) - 1;
   inputResult < 2 ? inputValue.value = 2 : inputValue.value = String(inputResult);
-};
+})
 
-// Altera o valor do input de dias
-function changeDayQuantity(num) {
+document.getElementsByClassName('form__element--button')[1].addEventListener('click', () => {
+  let inputValue = document.querySelector('.input__value--quantityPeople');
+  const inputResult = Number(inputValue.value) + 1;
+  inputValue.value = String(inputResult);
+})
+
+/* 
+  ------------------------------------------------------------------------------
+  Altera o valor do input de dias (Button [-] e Button [+]) 
+  ------------------------------------------------------------------------------
+*/
+document.getElementsByClassName('change_number_button')[0].addEventListener('click', () => {
   let inputValue = document.querySelector('.dynamic_number_input');
-  const inputResult = Number(inputValue.value) + num;
-  inputResult < 2 ? inputValue.value = 2 : inputValue.value = String(inputResult);
-};
+  const inputResult = Number(inputValue.value) - 1;
+  inputResult < 1 ? inputValue.value = 1 : inputValue.value = String(inputResult);
+})
+
+document.getElementsByClassName('change_number_button')[1].addEventListener('click', () => {
+  let inputValue = document.querySelector('.dynamic_number_input');
+  const inputResult = Number(inputValue.value) + 1;
+  inputValue.value = String(inputResult);
+})
+
 
 // Altera o atributo mínimo do input de data
-function blockNextWeek() {
+document.querySelector('.input--date').addEventListener('click', () => {
   const nextWeekDate = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
     .toISOString()
     .split('T')[0];
 
   document.querySelector('.input--date').setAttribute('min', nextWeekDate);
-};
+});
+
+/* 
+  ------------------------------------------------------------------------------
+  Event Listener dos Modais de Alerta: SUCESSO, SUGESTÃO e ERRO.
+  ------------------------------------------------------------------------------
+*/
+document.getElementsByClassName('container__confirm--submit')[0].addEventListener('click', () => refreshPage()) // Modal de Sucesso
+document.getElementsByClassName('container__confirm--submit')[1].addEventListener('click', () => refreshPage()) // Modal de Sugestão
+document.getElementsByClassName('container__confirm--submit')[2].addEventListener('click', () => refreshPage()) // Modal de Erro
 
 // Função que elabora o fetch POST do formulário principal
 document.querySelector('.form__element--finish__button').addEventListener('click', async () => {
-  const api = 'https://splashco.herokuapp.com/api/landing/submitt';
+  const api = 'https://splashco.herokuapp.com/api/landing/submit';
 
   const bodyProperty = {
     fullName: document.querySelector('.input--name').value,

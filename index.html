@@ -56,7 +56,7 @@
   </script>
 </head>
 
-<body onload="blockNextWeek()">
+<body>
   <script>
     fbq('track', 'ViewContent');
   </script>
@@ -67,17 +67,17 @@
     <p>Aguarde um instante...</p>
   </div>
 
-  <div onclick="refreshPage()" class="container__confirm--submit none" id="success">
+  <div class="container__confirm--submit none" id="success">
     <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! O seu pedido já foi enviado!</p>
   </div>
 
-  <div onclick="refreshPage()" class="container__suggestion--submit none" id="success">
+  <div class="container__suggestion--submit none" id="success">
     <img src="./assets/black-checkmark.svg" alt="Imagem de check, alerta de sucesso!" />
     <p>Sucesso! A sua sugestão já foi enviada!</p>
   </div>
 
-  <div onclick="refreshPage()" class="container__confirm--submit none" id="failure">
+  <div class="container__confirm--submit none" id="failure">
     <img src="./assets/black-close.svg" alt="Imagem de erro, alerta de erro!" />
     <p>Ocorreu um erro!<br>Por favor, tente novamente ou entre em contato conosco.</p>
   </div>
@@ -108,7 +108,7 @@
         </div>
 
         <section class="form__section">
-          <!-- <form> -->
+          <form>
             <div class="form__section--container">
               <p class="error-message"></p>
               <h1>AGENDE AGORA!</h1>
@@ -152,12 +152,14 @@
                   Quantas pessoas?
                 </label>
                 <div class="form__element--div div--button__script">
-                  <button class="form__element--button" type="button" onclick="changePeopleQty(-1)">
+                  <button class="form__element--button" type="button">
                     -
                   </button>
-                  <input class="form__element--input input--value input__value--quantityPeople"
-                    onkeypress="checkFirstForm()" value="2" disabled required />
-                  <button class="form__element--button" type="button" onclick="changePeopleQty(1)">
+                  <input 
+                    class="form__element--input input--value input__value--quantityPeople"
+                    value="2" disabled required 
+                  />
+                  <button class="form__element--button" type="button">
                     +
                   </button>
                   <img src="./assets/vectors/vector_group.png" alt="Foto de um grupo de pessoas" />
@@ -172,7 +174,7 @@
                   <label class="price_prefix">
                     R$
                   </label>
-                  <input class="default_input price_input input--minPrice" onchange="validateFirstForm()" min="0"
+                  <input class="default_input price_input input--minPrice" min="0"
                     type="number" required />
                 </div>
 
@@ -183,7 +185,7 @@
                   <label class="price_prefix">
                     R$
                   </label>
-                  <input class="default_input price_input input--maxPrice" onkeypress="validateFirstForm()" min="0"
+                  <input class="default_input price_input input--maxPrice" min="0"
                     type="number" required />
                 </div>
 
@@ -192,11 +194,11 @@
                     Quantidade de dias
                   </label>
                   <div class="margin_wrapper">
-                    <button class="change_number_button" type="button" onclick="changeDayQuantity(-1)">
+                    <button class="change_number_button" type="button">
                       -
                     </button>
                     <input class="dynamic_number_input" value="1" disabled required />
-                    <button class="change_number_button" type="button" onclick="changeDayQuantity(1)">
+                    <button class="change_number_button" type="button">
                       +
                     </button>
                   </div>
@@ -315,8 +317,7 @@
       </div>
     </section>
   </div>
-
+  
   <script src="./script.js"></script>
 </body>
-
 </html>
